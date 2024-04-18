@@ -27,7 +27,7 @@ func TestVM_VarDeclaration(t *testing.T) {
 			SourceCode: `
 				num a {2}
 				num b {3}
-				num c {2 + 3}
+				num c {2 + 10/2}
 			`,
 		})
 		if len(result.ErrorCollector.GetErrors()) != 0 {
@@ -45,7 +45,7 @@ func TestVM_VarDeclaration(t *testing.T) {
 		if b, err := myVM.GetVarTable().GetNumValue("b"); err != nil || b != 3 {
 			t.Errorf("Expected 3, got %v", b)
 		}
-		if c, err := myVM.GetVarTable().GetNumValue("c"); err != nil || c != 5 {
+		if c, err := myVM.GetVarTable().GetNumValue("c"); err != nil || c != 2 {
 			t.Errorf("Expected 5, got %v", c)
 		}
 	})

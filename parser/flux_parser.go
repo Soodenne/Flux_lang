@@ -458,11 +458,28 @@ func (f FluxProgramParser) ExitNumeric_expression(c *parsing.Numeric_expressionC
 						numExpr.LeftExpr = (*f.resultStack.Pop()).(*fluxExpr.NumericExpression)
 					}
 
+					if c.Op_level1() != nil {
+						if c.Op_level1().GetText() == "*" {
+							numExpr.Op = operators.NewMultiplication(c.GetStart().GetLine(), 0, 0, numExpr.LeftExpr, numExpr.RightExpr)
+						}
+
+						if c.Op_level1().GetText() == "/" {
+							numExpr.Op = operators.NewDivision(c.GetStart().GetLine(), 0, 0, numExpr.LeftExpr, numExpr.RightExpr)
+						}
+					}
+
 					if c.Op_level2() != nil {
 						if c.Op_level2().GetText() == "+" {
 							numExpr.Op = operators.NewAdd(c.GetStart().GetLine(), 0, 0, numExpr.LeftExpr, numExpr.RightExpr)
 						}
+
+						if c.Op_level2().GetText() == "-" {
+							numExpr.Op = operators.NewSubtraction(c.GetStart().GetLine(), 0, 0, numExpr.LeftExpr, numExpr.RightExpr)
+						}
 					}
+
+
+
 				}
 			}
 			f.resultStack.Push(numExpr)
