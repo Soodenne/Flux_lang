@@ -14,10 +14,9 @@ numeric_expression
     :L_PAREN numeric_expression R_PAREN
     | numeric_expression op_level1 numeric_expression
     | numeric_expression op_level2 numeric_expression
-    | NUMBER
     | get_var
     | function_call
-    | OP_MINUS numeric_expression
+    | (OP_MINUS | OP_PLUS  )? NUMBER
     ;
 
 text_expression

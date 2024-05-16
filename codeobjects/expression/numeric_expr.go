@@ -37,8 +37,10 @@ func (n NumericExpression) Execute(ctx *codeobjects2.ExecutionContext) *exceptio
 
 	if n.LeftExpr == nil && n.RightExpr == nil {
 		ctx.NumericValue = n.Value
+
 		return nil
 	}
+
 	n.Op.SetLeftExpr(n.LeftExpr)
 	n.Op.SetRightExpr(n.RightExpr)
 	return n.Op.Execute(ctx)

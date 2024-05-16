@@ -10,7 +10,7 @@ func TestCompiler_CallFn(t *testing.T) {
 	myCompiler := compiler.NewFluxCompiler()
 	result := myCompiler.Compile(&shared.CompilationParams{
 		SourceCode: `
-			log(2+3)
+			out(2+3)
 		`,
 	})
 	if len(result.ErrorCollector.GetErrors()) != 0 {

@@ -11,6 +11,7 @@ import (
 type Args struct {
 	*codeobjects.BaseStatement
 	Exprs []*expression.MathExpression
+
 }
 
 func (a Args) Generate(ctx *codeobjects.GenerateContext) string {

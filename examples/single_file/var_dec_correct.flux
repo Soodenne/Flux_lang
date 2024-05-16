@@ -1,2 +1,3 @@
 num a {7+3}
-out(1+2)
+text b {"huy"+"huy"}
+boolean c {true}

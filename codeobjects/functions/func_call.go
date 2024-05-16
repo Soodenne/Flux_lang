@@ -13,6 +13,8 @@ type FunctionCall struct {
 }
 
 func NewFunctionCall(baseStatement *codeobjects.BaseStatement, name string, args *Args) *FunctionCall {
+	// declare a var to console log
+
 	return &FunctionCall{BaseStatement: baseStatement, Name: name, Args: args}
 }
 

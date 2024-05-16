@@ -5,6 +5,7 @@ import (
 	fluxCodeObjects "github.com/thanhhuy5902/Flux_lang/codeobjects"
 	"github.com/thanhhuy5902/Flux_lang/codeobjects/declarations"
 	fluxExpr "github.com/thanhhuy5902/Flux_lang/codeobjects/expression"
+	"github.com/thanhhuy5902/Flux_lang/codeobjects/expression/operator_text"
 	"github.com/thanhhuy5902/Flux_lang/codeobjects/expression/operators"
 	"github.com/thanhhuy5902/Flux_lang/codeobjects/functions"
 	"github.com/thanhhuy5902/Flux_lang/common"
@@ -42,7 +43,21 @@ func (f FluxProgramParser) EnterOp_one_declaration(c *parsing.Op_one_declaration
 
 func (f FluxProgramParser) EnterText_expression(c *parsing.Text_expressionContext) {
 	//TODO implement me
-	panic("implement me")
+
+	textExpr := &fluxExpr.TextExpression{
+		BaseStatement: &fluxCodeObjects.BaseStatement{
+			Line:     c.GetStart().GetLine(),
+			StartPos: c.GetStart().GetStart(),
+			EndPos:   0,
+		},
+		LeftTextExpr:  nil,
+		Op:            nil,
+		RightTextExpr: nil,
+		Value:         "",
+	}
+
+	f.stackStatements.Push(textExpr)
+
 }
 
 func (f FluxProgramParser) ExitLoop(c *parsing.LoopContext) {
@@ -61,8 +76,44 @@ func (f FluxProgramParser) ExitOp_one_declaration(c *parsing.Op_one_declarationC
 }
 
 func (f FluxProgramParser) ExitText_expression(c *parsing.Text_expressionContext) {
-	//TODO implement me
-	panic("implement me")
+
+	if f.stackStatements.Peek() != nil {
+		if _, ok := (*f.stackStatements.Peek()).(*fluxExpr.TextExpression); ok != false {
+			textExpr := (*f.stackStatements.Pop()).(*fluxExpr.TextExpression)
+			if c.TEXT() != nil {
+				textValue := strings.Trim(c.TEXT().GetText(), "'")
+				textExpr.Value = textValue
+			} else if c.Get_var() != nil {
+				if !f.resultStack.IsEmpty() {
+					if _, ok := (*f.resultStack.Peek()).(*fluxExpr.GetVar); ok != false {
+						textExpr.GetVar = (*f.resultStack.Pop()).(*fluxExpr.GetVar)
+					}
+				}
+
+			} else if len(c.AllText_expression()) == 2 {
+				if !f.resultStack.IsEmpty() {
+
+					if _, ok := (*f.resultStack.Peek()).(*fluxExpr.TextExpression); ok != false {
+						textExpr.RightTextExpr = (*f.resultStack.Pop()).(*fluxExpr.TextExpression)
+					}
+
+					if _, ok := (*f.resultStack.Peek()).(*fluxExpr.TextExpression); ok != false {
+						textExpr.LeftTextExpr = (*f.resultStack.Pop()).(*fluxExpr.TextExpression)
+					}
+
+					if c.OP_PLUS() != nil {
+						if c.OP_PLUS().GetText() == "+" {
+							textExpr.Op = operator_text.NewAddText(c.GetStart().GetLine(), 0, 0, textExpr.LeftTextExpr, textExpr.RightTextExpr)
+						}
+
+					}
+
+				}
+			}
+			f.resultStack.Push(textExpr)
+		}
+	}
+
 }
 
 func NewFluxProgramParser(logger fluxIO.Logger, errorCollector fluxIO.ErrorCollector) *FluxProgramParser {
@@ -306,6 +357,7 @@ func (f *FluxProgramParser) ExitProgram(c *parsing.ProgramContext) {
 
 func (f FluxProgramParser) ExitStatement(c *parsing.StatementContext) {
 	f.logger.Infof("Exiting statement")
+
 }
 
 func (f FluxProgramParser) ExitExpression(c *parsing.ExpressionContext) {
@@ -377,6 +429,11 @@ func (f FluxProgramParser) ExitNumber_var_declaration(c *parsing.Number_var_decl
 				if _, ok := (*f.resultStack.Peek()).(*fluxExpr.MathExpression); ok != false {
 					numDecStmt.Expr = (*f.resultStack.Pop()).(*fluxExpr.MathExpression)
 				}
+
+				//pop numeric expression
+
+				// check if the top of the stack is a NumericExpression
+
 			}
 
 			if c.NUMBER() != nil {
@@ -397,6 +454,7 @@ func (f FluxProgramParser) ExitBoolean_var_declaration(c *parsing.Boolean_var_de
 
 func (f FluxProgramParser) ExitSingle_var_declaration(c *parsing.Single_var_declarationContext) {
 	f.logger.Infof("Exiting single var declaration")
+
 }
 
 func (f FluxProgramParser) ExitArray_var_declaration(c *parsing.Array_var_declarationContext) {
@@ -432,7 +490,14 @@ func (f FluxProgramParser) ExitNumeric_expression(c *parsing.Numeric_expressionC
 	if f.stackStatements.Peek() != nil {
 		if _, ok := (*f.stackStatements.Peek()).(*fluxExpr.NumericExpression); ok != false {
 			numExpr := (*f.stackStatements.Pop()).(*fluxExpr.NumericExpression)
-			if c.NUMBER() != nil {
+			if c.L_PAREN() != nil && c.R_PAREN() != nil {
+				//pop the result stack
+				if !f.resultStack.IsEmpty() {
+					if _, ok := (*f.resultStack.Peek()).(*fluxExpr.NumericExpression); ok != false {
+						numExpr = (*f.resultStack.Pop()).(*fluxExpr.NumericExpression)
+					}
+				}
+			} else if c.NUMBER() != nil {
 				value, err := strconv.ParseFloat(c.NUMBER().GetText(), 64)
 				if err != nil {
 					f.errorCollector.CollectError(&exception.BaseException{
@@ -451,9 +516,11 @@ func (f FluxProgramParser) ExitNumeric_expression(c *parsing.Numeric_expressionC
 
 			} else if len(c.AllNumeric_expression()) == 2 {
 				if !f.resultStack.IsEmpty() {
+
 					if _, ok := (*f.resultStack.Peek()).(*fluxExpr.NumericExpression); ok != false {
 						numExpr.RightExpr = (*f.resultStack.Pop()).(*fluxExpr.NumericExpression)
 					}
+
 					if _, ok := (*f.resultStack.Peek()).(*fluxExpr.NumericExpression); ok != false {
 						numExpr.LeftExpr = (*f.resultStack.Pop()).(*fluxExpr.NumericExpression)
 					}
@@ -478,8 +545,6 @@ func (f FluxProgramParser) ExitNumeric_expression(c *parsing.Numeric_expressionC
 						}
 					}
 
-
-
 				}
 			}
 			f.resultStack.Push(numExpr)
@@ -503,6 +568,8 @@ func (f FluxProgramParser) ExitMath_expression(c *parsing.Math_expressionContext
 					mathExpr.NumericExpr = (*f.resultStack.Pop()).(*fluxExpr.NumericExpression)
 				} else if _, ok := (*f.resultStack.Peek()).(*fluxExpr.GetVar); ok != false {
 					mathExpr.GetVar = (*f.resultStack.Pop()).(*fluxExpr.GetVar)
+				} else if _, ok := (*f.resultStack.Peek()).(*fluxExpr.TextExpression); ok != false {
+					mathExpr.TextExpr = (*f.resultStack.Pop()).(*fluxExpr.TextExpression)
 				}
 			}
 			f.resultStack.Push(mathExpr)
@@ -533,16 +600,18 @@ func (f FluxProgramParser) ExitGet_var(c *parsing.Get_varContext) {
 			getVar := (*f.stackStatements.Pop()).(*fluxExpr.GetVar)
 			getVar.VarName = c.GetText()
 			getVar.EndPos = c.GetStop().GetStop()
+			// check if the parent is a MathExpression or NumericExpression
+
 			//// case 1: parent is a MathExpression
-			//if _, ok := (*f.stackStatements.Peek()).(*fluxExpr.MathExpression); ok != false {
-			//	mathExpr := (*f.stackStatements.Peek()).(*fluxExpr.MathExpression)
-			//	mathExpr.GetVar = getVar
-			//}
-			//// case 2: parent is a numeric expression
-			//if _, ok := (*f.stackStatements.Peek()).(*fluxExpr.NumericExpression); ok != false {
-			//	numExpr := (*f.stackStatements.Peek()).(*fluxExpr.NumericExpression)
-			//	numExpr.GetVar = getVar
-			//}
+			if _, ok := (*f.stackStatements.Peek()).(*fluxExpr.MathExpression); ok != false {
+				mathExpr := (*f.stackStatements.Peek()).(*fluxExpr.MathExpression)
+				mathExpr.GetVar = getVar
+			}
+			// case 2: parent is a numeric expression
+			if _, ok := (*f.stackStatements.Peek()).(*fluxExpr.NumericExpression); ok != false {
+				numExpr := (*f.stackStatements.Peek()).(*fluxExpr.NumericExpression)
+				numExpr.GetVar = getVar
+			}
 
 			// push the getVar to the result stack
 			f.resultStack.Push(getVar)
@@ -556,7 +625,10 @@ func (f FluxProgramParser) ExitFunction_call(c *parsing.Function_callContext) {
 	if f.stackStatements.Peek() != nil {
 		if _, ok := (*f.stackStatements.Peek()).(*functions.FunctionCall); ok != false {
 			fnCall := (*f.stackStatements.Pop()).(*functions.FunctionCall)
+			//why c.VAR_IDENTIFIER().GetText() is empty
 			fnCall.Name = c.VAR_IDENTIFIER().GetText()
+
+			fnCall.StartPos = c.GetStart().GetStart()
 			fnCall.EndPos = c.GetStop().GetStop()
 			// get args
 			if !f.resultStack.IsEmpty() {

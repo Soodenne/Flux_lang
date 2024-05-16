@@ -5,6 +5,7 @@ import (
 	"github.com/thanhhuy5902/Flux_lang/codeobjects"
 	expression2 "github.com/thanhhuy5902/Flux_lang/codeobjects/expression"
 	operators2 "github.com/thanhhuy5902/Flux_lang/codeobjects/expression/operators"
+	"github.com/thanhhuy5902/Flux_lang/common"
 	"github.com/thanhhuy5902/Flux_lang/core"
 	"testing"
 )
@@ -12,7 +13,7 @@ import (
 func TestVarDeclaration_Execute(t *testing.T) {
 	varTable := core.NewVarTable()
 	t.Run("Create a new variable", func(t *testing.T) {
-		varDeclaration := NewVarDeclaration(1, 1, 1, "testVar", FluxTypeNumber, "",
+		varDeclaration := NewVarDeclaration(1, 1, 1, "testVar", common.FluxTypeNumber, "",
 			expression2.NewMathExpression(1, 1, 1,
 				expression2.NewNumericExpression(1, 1, 1,
 					expression2.NewNumericExpression(1, 1, 1, nil, operators2.NullOp, nil, float64(2)),

@@ -5,13 +5,11 @@ import (
 	"github.com/thanhhuy5902/Flux_lang/exception"
 )
 
-type Operator interface {
-	SetLeftExpr(leftExpr *NumericExpression)
-	SetRightExpr(rightExpr *NumericExpression)
-
-	GetLeftExpr() *NumericExpression
-	GetRightExpr() *NumericExpression
-
+type OperatorText interface {
+	SetLeftTextExpr(leftExpr *TextExpression)
+	SetRightTextExpr(rightExpr *TextExpression)
+	GetRightTextExpr() *TextExpression
+	GetLeftTextExpr() *TextExpression
 	Generate(ctx *codeobjects.GenerateContext) string
 	Execute(ctx *codeobjects.ExecutionContext) *exception.BaseException
 }

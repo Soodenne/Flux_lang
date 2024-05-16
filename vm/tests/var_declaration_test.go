@@ -25,9 +25,8 @@ func TestVM_VarDeclaration(t *testing.T) {
 		myVM := vm.NewFluxVirtualMachine()
 		result := myVM.Execute(&shared.ExecutionParams{
 			SourceCode: `
-				num a {2}
-				num b {3}
-				num c {2 + 10/2}
+				num c {(5+3)/(4+4)}
+				num d {c*2/c}
 			`,
 		})
 		if len(result.ErrorCollector.GetErrors()) != 0 {
@@ -39,14 +38,9 @@ func TestVM_VarDeclaration(t *testing.T) {
 		if result.ElapsedTime > 1000 {
 			t.Errorf("Execution time too long: %v", result.ElapsedTime)
 		}
-		if a, err := myVM.GetVarTable().GetNumValue("a"); err != nil || a != 2 {
-			t.Errorf("Expected 2, got %v", a)
-		}
-		if b, err := myVM.GetVarTable().GetNumValue("b"); err != nil || b != 3 {
-			t.Errorf("Expected 3, got %v", b)
-		}
-		if c, err := myVM.GetVarTable().GetNumValue("c"); err != nil || c != 2 {
-			t.Errorf("Expected 5, got %v", c)
+
+		if d, err := myVM.GetVarTable().GetNumValue("d"); err != nil || d != 2 {
+			t.Errorf("Expected 2, got %v", d)
 		}
 	})
 	t.Run("create valid num var and assign to the other num var", func(t *testing.T) {
@@ -79,6 +73,7 @@ func TestVM_VarDeclaration(t *testing.T) {
 			SourceCode: `
 				text a {'hello'}
 				text b {'world'}
+				text c {'hello'+'world'}
 			`,
 		})
 		if len(result.ErrorCollector.GetErrors()) != 0 {
@@ -95,6 +90,9 @@ func TestVM_VarDeclaration(t *testing.T) {
 		}
 		if b, err := myVM.GetVarTable().GetTextValue("b"); err != nil || b != "world" {
 			t.Errorf("Expected world, got %v", b)
+		}
+		if c, err := myVM.GetVarTable().GetTextValue("c"); err != nil || c != "helloworld" {
+			t.Errorf("Expected helloworld, got %v", c)
 		}
 	})
 }

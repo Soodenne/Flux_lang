@@ -7,7 +7,7 @@ BOOLEAN: 'true' | 'false';
 BOOLEAN_TYPE: 'boolean';
 
 
-NUMBER  : '-'? [0-9]+ ('.' [0-9]*)? ;
+NUMBER  :  [0-9]+ ('.' [0-9]*)? ;
 NUMBER_TYPE: 'num';
 
 

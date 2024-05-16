@@ -15,3 +15,6 @@ java -Xmx500M -cp "%CLASSPATH%" org.antlr.v4.Tool ^
   -lib ./gen
 
 echo ANTLR4 code generation complete.
+
+
+

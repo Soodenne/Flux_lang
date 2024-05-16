@@ -20,6 +20,8 @@ func (m *Multiplication) SetRightExpr(rightExpr *expression.NumericExpression) {
 	m.Right = rightExpr
 }
 
+
+
 func (m *Multiplication) GetLeftExpr() *expression.NumericExpression {
 	return m.Left
 }
