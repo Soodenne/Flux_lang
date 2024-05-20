@@ -42,7 +42,6 @@ op_one_declaration
 
 string_var_declaration
     : TEXT_TYPE var_name L_BLOCK NEWLINE* TEXT NEWLINE* R_BLOCK
-    | TEXT_TYPE var_name L_BLOCK NEWLINE* get_var NEWLINE* R_BLOCK
     | TEXT_TYPE var_name L_BLOCK NEWLINE* text_expression NEWLINE* R_BLOCK
     ;
 

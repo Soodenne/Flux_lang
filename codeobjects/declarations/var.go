@@ -15,6 +15,7 @@ type VarDeclaration struct {
 	Type     common.FluxType
 	RawValue string
 	Expr     *expression.MathExpression
+	ExprText *expression.TextExpression
 }
 
 func (v VarDeclaration) Generate(ctx *codeobjects2.GenerateContext) string {
@@ -31,6 +32,9 @@ func (v VarDeclaration) Generate(ctx *codeobjects2.GenerateContext) string {
 		return fmt.Sprintf("%v %v = %v;", varType, v.Name, v.Expr.Generate(ctx))
 	} else if v.RawValue != "" {
 		return fmt.Sprintf("%v %v = %v;", varType, v.Name, v.RawValue)
+	} else if v.ExprText != nil {
+		return fmt.Sprintf("%v %v = %v;", varType, v.Name, v.ExprText.Generate(ctx))
+
 	}
 	return fmt.Sprintf("%v %v;", v.Name, varType)
 }
@@ -99,6 +103,18 @@ func (v VarDeclaration) Execute(ctx *codeobjects2.ExecutionContext) *exception.B
 				return err
 			}
 		}
+	} else if v.ExprText != nil {
+		err := v.ExprText.Execute(ctx)
+		if err != nil {
+			return err
+		}
+		if v.Type == common.FluxTypeString {
+			err := ctx.VarTable.SetText(v.Name, ctx.TextValue)
+			if err != nil {
+				return err
+			}
+		}
+
 	} else {
 		// Set default value
 		if v.Type == common.FluxTypeNumber {
