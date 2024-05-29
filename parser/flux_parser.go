@@ -321,7 +321,7 @@ func (f FluxProgramParser) EnterMath_expression(c *parsing.Math_expressionContex
 			EndPos:   0,
 		},
 		NumericExpr: nil,
-		TextExpr:    nil,
+		//TextExpr:    nil,
 		GetVar:      nil,
 		LogicalExpr: nil,
 	}
@@ -670,8 +670,8 @@ func (f FluxProgramParser) ExitMath_expression(c *parsing.Math_expressionContext
 					mathExpr.NumericExpr = (*f.resultStack.Pop()).(*fluxExpr.NumericExpression)
 				} else if _, ok := (*f.resultStack.Peek()).(*fluxExpr.GetVar); ok != false {
 					mathExpr.GetVar = (*f.resultStack.Pop()).(*fluxExpr.GetVar)
-				} else if _, ok := (*f.resultStack.Peek()).(*fluxExpr.TextExpression); ok != false {
-					mathExpr.TextExpr = (*f.resultStack.Pop()).(*fluxExpr.TextExpression)
+					//} else if _, ok := (*f.resultStack.Peek()).(*fluxExpr.TextExpression); ok != false {
+					//	mathExpr.TextExpr = (*f.resultStack.Pop()).(*fluxExpr.TextExpression)
 				} else if _, ok := (*f.resultStack.Peek()).(*fluxExpr.LogicalExpression); ok != false {
 					mathExpr.LogicalExpr = (*f.resultStack.Pop()).(*fluxExpr.LogicalExpression)
 				}
