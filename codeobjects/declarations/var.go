@@ -107,6 +107,19 @@ func (v VarDeclaration) Execute(ctx *codeobjects2.ExecutionContext) *exception.B
 				return err
 			}
 		}
+		if v.Type == common.FluxTypeString {
+			err := ctx.VarTable.SetText(v.Name, "")
+			if err != nil {
+				return err
+			}
+		}
+		if v.Type == common.FluxTypeBool {
+			err := ctx.VarTable.SetBool(v.Name, false)
+			if err != nil {
+				return err
+			}
+
+		}
 	}
 
 	return nil

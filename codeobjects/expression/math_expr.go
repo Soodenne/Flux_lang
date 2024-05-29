@@ -10,6 +10,7 @@ type MathExpression struct {
 	NumericExpr *NumericExpression
 	TextExpr    *TextExpression
 	GetVar      *GetVar
+	LogicalExpr *LogicalExpression
 }
 
 func (m MathExpression) Generate(ctx *codeobjects2.GenerateContext) string {
@@ -23,12 +24,19 @@ func (m MathExpression) Generate(ctx *codeobjects2.GenerateContext) string {
 		return m.TextExpr.Generate(ctx)
 
 	}
+	if m.LogicalExpr != nil {
+		return m.LogicalExpr.Generate(ctx)
+	}
 	return ""
 }
 
 func (m MathExpression) Execute(ctx *codeobjects2.ExecutionContext) *exception.BaseException {
 	if m.NumericExpr != nil {
 		return m.NumericExpr.Execute(ctx)
+	}
+
+	if m.LogicalExpr != nil {
+		return m.LogicalExpr.Execute(ctx)
 	}
 
 	if m.GetVar != nil {
@@ -41,6 +49,6 @@ func (m MathExpression) Execute(ctx *codeobjects2.ExecutionContext) *exception.B
 	}
 	return nil
 }
-func NewMathExpression(line int, startPos int, endPos int, numericExpr *NumericExpression, textExpr *TextExpression) *MathExpression {
-	return &MathExpression{BaseStatement: &codeobjects2.BaseStatement{Line: line, StartPos: startPos, EndPos: endPos}, NumericExpr: numericExpr, TextExpr: textExpr}
+func NewMathExpression(line int, startPos int, endPos int, numericExpr *NumericExpression, textExpr *TextExpression, logicExpr *LogicalExpression) *MathExpression {
+	return &MathExpression{BaseStatement: &codeobjects2.BaseStatement{Line: line, StartPos: startPos, EndPos: endPos}, NumericExpr: numericExpr, TextExpr: textExpr, LogicalExpr: logicExpr}
 }

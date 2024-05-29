@@ -243,6 +243,8 @@ func (f *FluxProgramParser) EnterNumber_var_declaration(c *parsing.Number_var_de
 
 func (f *FluxProgramParser) EnterBoolean_var_declaration(c *parsing.Boolean_var_declarationContext) {
 	f.logger.Infof("Entering boolean var declaration")
+	boolDecStmt := declarations.NewVarDeclaration(c.GetStart().GetLine(), c.GetStart().GetStart(), 0, "", common.FluxTypeBool, "", nil)
+	f.stackStatements.Push(boolDecStmt)
 }
 
 func (f FluxProgramParser) EnterSingle_var_declaration(c *parsing.Single_var_declarationContext) {
@@ -297,6 +299,17 @@ func (f FluxProgramParser) EnterNumeric_expression(c *parsing.Numeric_expression
 
 func (f FluxProgramParser) EnterLogical_expression(c *parsing.Logical_expressionContext) {
 	f.logger.Infof("Entering logical expression")
+	logicalExpr := &fluxExpr.LogicalExpression{
+		BaseStatement: &fluxCodeObjects.BaseStatement{
+			Line:     c.GetStart().GetLine(),
+			StartPos: c.GetStart().GetStart(),
+		},
+		LeftExpr:  nil,
+		Op:        nil,
+		RightExpr: nil,
+		Value:     false,
+	}
+	f.stackStatements.Push(logicalExpr)
 }
 
 func (f FluxProgramParser) EnterMath_expression(c *parsing.Math_expressionContext) {
@@ -308,6 +321,9 @@ func (f FluxProgramParser) EnterMath_expression(c *parsing.Math_expressionContex
 			EndPos:   0,
 		},
 		NumericExpr: nil,
+		TextExpr:    nil,
+		GetVar:      nil,
+		LogicalExpr: nil,
 	}
 	f.stackStatements.Push(mathExpr)
 }
@@ -429,13 +445,7 @@ func (f FluxProgramParser) ExitNumber_var_declaration(c *parsing.Number_var_decl
 				if _, ok := (*f.resultStack.Peek()).(*fluxExpr.MathExpression); ok != false {
 					numDecStmt.Expr = (*f.resultStack.Pop()).(*fluxExpr.MathExpression)
 				}
-
-				//pop numeric expression
-
-				// check if the top of the stack is a NumericExpression
-
 			}
-
 			if c.NUMBER() != nil {
 				numDecStmt.RawValue = c.NUMBER().GetText()
 			}
@@ -450,6 +460,25 @@ func (f FluxProgramParser) ExitNumber_var_declaration(c *parsing.Number_var_decl
 
 func (f FluxProgramParser) ExitBoolean_var_declaration(c *parsing.Boolean_var_declarationContext) {
 	f.logger.Infof("Exiting boolean var declaration")
+	if f.stackStatements.Peek() != nil {
+		if _, ok := (*f.stackStatements.Peek()).(*declarations.VarDeclaration); ok {
+			boolDecStmt := (*f.stackStatements.Pop()).(*declarations.VarDeclaration)
+			if !f.resultStack.IsEmpty() {
+				// check if the top of the stack is a MathExpression
+				if _, ok := (*f.resultStack.Peek()).(*fluxExpr.MathExpression); ok != false {
+					boolDecStmt.Expr = (*f.resultStack.Pop()).(*fluxExpr.MathExpression)
+				}
+			}
+			if c.BOOLEAN() != nil {
+				boolDecStmt.RawValue = c.BOOLEAN().GetText()
+			}
+			boolDecStmt.EndPos = c.GetStop().GetStop()
+			boolDecStmt.Name = c.Var_name().GetText()
+			boolDecStmt.Type = common.FluxTypeBool
+			f.resultStack.Push(boolDecStmt)
+		}
+
+	}
 }
 
 func (f FluxProgramParser) ExitSingle_var_declaration(c *parsing.Single_var_declarationContext) {
@@ -544,7 +573,6 @@ func (f FluxProgramParser) ExitNumeric_expression(c *parsing.Numeric_expressionC
 							numExpr.Op = operators.NewSubtraction(c.GetStart().GetLine(), 0, 0, numExpr.LeftExpr, numExpr.RightExpr)
 						}
 					}
-
 				}
 			}
 			f.resultStack.Push(numExpr)
@@ -553,7 +581,69 @@ func (f FluxProgramParser) ExitNumeric_expression(c *parsing.Numeric_expressionC
 }
 
 func (f FluxProgramParser) ExitLogical_expression(c *parsing.Logical_expressionContext) {
-	f.logger.Infof("Exiting logical expression")
+	if f.stackStatements.Peek() != nil {
+		if _, ok := (*f.stackStatements.Peek()).(*fluxExpr.LogicalExpression); ok != false {
+			logicalExpr := (*f.stackStatements.Pop()).(*fluxExpr.LogicalExpression)
+			if c.BOOLEAN() != nil {
+				logicalExpr.Value = c.BOOLEAN().GetText() == "true"
+			}
+			if c.Get_var() != nil {
+				if !f.resultStack.IsEmpty() {
+					if _, ok := (*f.resultStack.Peek()).(*fluxExpr.GetVar); ok != false {
+						logicalExpr.GetVar = (*f.resultStack.Pop()).(*fluxExpr.GetVar)
+					}
+				}
+			}
+			if len(c.AllNumeric_expression()) == 2 {
+				if !f.resultStack.IsEmpty() {
+					if _, ok := (*f.resultStack.Peek()).(*fluxExpr.NumericExpression); ok != false {
+						logicalExpr.RightExpr = (*f.resultStack.Pop()).(*fluxExpr.NumericExpression)
+					}
+					if _, ok := (*f.resultStack.Peek()).(*fluxExpr.NumericExpression); ok != false {
+						logicalExpr.LeftExpr = (*f.resultStack.Pop()).(*fluxExpr.NumericExpression)
+					}
+
+					if c.Op_level4() != nil {
+						if c.Op_level4().GetText() == ">" {
+							logicalExpr.Op = operators.NewGreaterThan(c.GetStart().GetLine(), 0, 0, logicalExpr.LeftExpr, logicalExpr.RightExpr)
+						}
+					}
+
+					if c.Op_level4() != nil {
+						if c.Op_level4().GetText() == "<" {
+							logicalExpr.Op = operators.NewLessThan(c.GetStart().GetLine(), 0, 0, logicalExpr.LeftExpr, logicalExpr.RightExpr)
+						}
+					}
+
+					if c.Op_level4() != nil {
+						if c.Op_level4().GetText() == ">=" {
+							logicalExpr.Op = operators.NewGreaterEqual(c.GetStart().GetLine(), 0, 0, logicalExpr.LeftExpr, logicalExpr.RightExpr)
+						}
+					}
+
+					if c.Op_level4() != nil {
+						if c.Op_level4().GetText() == "<=" {
+							logicalExpr.Op = operators.NewLessEqual(c.GetStart().GetLine(), 0, 0, logicalExpr.LeftExpr, logicalExpr.RightExpr)
+						}
+					}
+
+					if c.Op_level4() != nil {
+						if c.Op_level4().GetText() == "=" {
+							logicalExpr.Op = operators.NewEqual(c.GetStart().GetLine(), 0, 0, logicalExpr.LeftExpr, logicalExpr.RightExpr)
+						}
+					}
+
+					if c.Op_level4() != nil {
+						if c.Op_level4().GetText() == "!=" {
+							logicalExpr.Op = operators.NewNotEqual(c.GetStart().GetLine(), 0, 0, logicalExpr.LeftExpr, logicalExpr.RightExpr)
+						}
+					}
+				}
+			}
+			f.resultStack.Push(logicalExpr)
+		}
+
+	}
 }
 
 func (f FluxProgramParser) ExitMath_expression(c *parsing.Math_expressionContext) {
@@ -570,17 +660,13 @@ func (f FluxProgramParser) ExitMath_expression(c *parsing.Math_expressionContext
 					mathExpr.GetVar = (*f.resultStack.Pop()).(*fluxExpr.GetVar)
 				} else if _, ok := (*f.resultStack.Peek()).(*fluxExpr.TextExpression); ok != false {
 					mathExpr.TextExpr = (*f.resultStack.Pop()).(*fluxExpr.TextExpression)
+				} else if _, ok := (*f.resultStack.Peek()).(*fluxExpr.LogicalExpression); ok != false {
+					mathExpr.LogicalExpr = (*f.resultStack.Pop()).(*fluxExpr.LogicalExpression)
 				}
 			}
 			f.resultStack.Push(mathExpr)
 		}
-		//if c.Numeric_expression() != nil {
-		//	if (*f.resultStack.Peek()).(*fluxExpr.NumericExpression) != nil {
-		//		mathExpr := (*f.stackStatements.Pop()).(*fluxExpr.MathExpression)
-		//		mathExpr.NumericExpr = (*f.resultStack.Pop()).(*fluxExpr.NumericExpression)
-		//		f.resultStack.Push(mathExpr)
-		//	}
-		//}
+
 	}
 }
 
@@ -611,6 +697,12 @@ func (f FluxProgramParser) ExitGet_var(c *parsing.Get_varContext) {
 			if _, ok := (*f.stackStatements.Peek()).(*fluxExpr.NumericExpression); ok != false {
 				numExpr := (*f.stackStatements.Peek()).(*fluxExpr.NumericExpression)
 				numExpr.GetVar = getVar
+			}
+
+			// case 3: parent is a logical expression
+			if _, ok := (*f.stackStatements.Peek()).(*fluxExpr.LogicalExpression); ok != false {
+				logicalExpr := (*f.stackStatements.Peek()).(*fluxExpr.LogicalExpression)
+				logicalExpr.GetVar = getVar
 			}
 
 			// push the getVar to the result stack

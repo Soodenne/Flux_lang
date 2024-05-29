@@ -5,7 +5,7 @@ type FluxType string
 const (
 	FluxTypeNumber FluxType = "num"
 	FluxTypeString FluxType = "text"
-	FluxTypeBool   FluxType = "bool"
+	FluxTypeBool   FluxType = "boolean"
 	FluxTypeNone   FluxType = "none"
 )
 

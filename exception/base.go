@@ -7,4 +7,5 @@ type BaseException struct {
 	Line       int
 	StartPos   int
 	EndPos     int
+	Message    string
 }

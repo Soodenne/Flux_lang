@@ -250,7 +250,7 @@ func fluxParserInit() {
 		5, 4, 0, 0, 354, 355, 3, 22, 11, 0, 355, 359, 5, 18, 0, 0, 356, 358, 5,
 		49, 0, 0, 357, 356, 1, 0, 0, 0, 358, 361, 1, 0, 0, 0, 359, 357, 1, 0, 0,
 		0, 359, 360, 1, 0, 0, 0, 360, 362, 1, 0, 0, 0, 361, 359, 1, 0, 0, 0, 362,
-		366, 3, 56, 28, 0, 363, 365, 5, 49, 0, 0, 364, 363, 1, 0, 0, 0, 365, 368,
+		366, 3, 60, 30, 0, 363, 365, 5, 49, 0, 0, 364, 363, 1, 0, 0, 0, 365, 368,
 		1, 0, 0, 0, 366, 364, 1, 0, 0, 0, 366, 367, 1, 0, 0, 0, 367, 369, 1, 0,
 		0, 0, 368, 366, 1, 0, 0, 0, 369, 370, 5, 19, 0, 0, 370, 372, 1, 0, 0, 0,
 		371, 335, 1, 0, 0, 0, 371, 353, 1, 0, 0, 0, 372, 35, 1, 0, 0, 0, 373, 388,
@@ -4333,7 +4333,7 @@ type IBoolean_var_declarationContext interface {
 	R_BLOCK() antlr.TerminalNode
 	AllNEWLINE() []antlr.TerminalNode
 	NEWLINE(i int) antlr.TerminalNode
-	Logical_expression() ILogical_expressionContext
+	Math_expression() IMath_expressionContext
 
 	// IsBoolean_var_declarationContext differentiates from other interfaces.
 	IsBoolean_var_declarationContext()
@@ -4411,10 +4411,10 @@ func (s *Boolean_var_declarationContext) NEWLINE(i int) antlr.TerminalNode {
 	return s.GetToken(FluxNEWLINE, i)
 }
 
-func (s *Boolean_var_declarationContext) Logical_expression() ILogical_expressionContext {
+func (s *Boolean_var_declarationContext) Math_expression() IMath_expressionContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(ILogical_expressionContext); ok {
+		if _, ok := ctx.(IMath_expressionContext); ok {
 			t = ctx.(antlr.RuleContext)
 			break
 		}
@@ -4424,7 +4424,7 @@ func (s *Boolean_var_declarationContext) Logical_expression() ILogical_expressio
 		return nil
 	}
 
-	return t.(ILogical_expressionContext)
+	return t.(IMath_expressionContext)
 }
 
 func (s *Boolean_var_declarationContext) GetRuleContext() antlr.RuleContext {
@@ -4604,7 +4604,7 @@ func (p *Flux) Boolean_var_declaration() (localctx IBoolean_var_declarationConte
 		}
 		{
 			p.SetState(362)
-			p.logical_expression(0)
+			p.Math_expression()
 		}
 		p.SetState(366)
 		p.GetErrorHandler().Sync(p)

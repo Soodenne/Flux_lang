@@ -26,6 +26,7 @@ func (e ExecutionContext) Clone() *ExecutionContext {
 	return &ExecutionContext{
 		ctx:          e.ctx,
 		NumericValue: e.NumericValue,
+		BoolValue:    e.BoolValue,
 		VarTable:     e.VarTable,
 	}
 }
@@ -34,6 +35,7 @@ func NewExecutionContext(ctx context.Context, varTable *core.VarTable) *Executio
 	return &ExecutionContext{
 		ctx:          ctx,
 		NumericValue: 0,
+		BoolValue:    false,
 		VarTable:     varTable,
 	}
 }

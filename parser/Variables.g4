@@ -47,14 +47,14 @@ string_var_declaration
     ;
 
 
-    number_var_declaration
+number_var_declaration
     : NUMBER_TYPE var_name L_BLOCK NEWLINE* NUMBER NEWLINE* R_BLOCK
     | NUMBER_TYPE var_name L_BLOCK NEWLINE* math_expression NEWLINE* R_BLOCK
     ;
 
 boolean_var_declaration
     : BOOLEAN_TYPE var_name L_BLOCK NEWLINE* BOOLEAN NEWLINE* R_BLOCK
-    | BOOLEAN_TYPE var_name L_BLOCK NEWLINE* logical_expression NEWLINE* R_BLOCK
+    | BOOLEAN_TYPE var_name L_BLOCK NEWLINE* math_expression NEWLINE* R_BLOCK
     ;
 
 single_var_declaration
