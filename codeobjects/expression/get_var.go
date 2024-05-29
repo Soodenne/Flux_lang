@@ -42,5 +42,18 @@ func (g GetVar) Execute(ctx *codeobjects.ExecutionContext) *exception.BaseExcept
 		}
 		ctx.NumericValue = value
 	}
+	if entry.Type == core.VarTypeText {
+		value, err := ctx.VarTable.GetTextValue(g.VarName)
+		if err != nil {
+			return &exception.BaseException{
+				MessageFmt: "Invalid string format %v",
+				Args:       []interface{}{entry.RawValue},
+				Line:       g.GetLine(),
+				StartPos:   g.GetStartPos(),
+				EndPos:     g.GetEndPos(),
+			}
+		}
+		ctx.TextValue = value
+	}
 	return nil
 }

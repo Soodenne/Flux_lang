@@ -60,7 +60,7 @@ func fluxParserInit() {
 	}
 	staticData.PredictionContextCache = antlr.NewPredictionContextCache()
 	staticData.serializedATN = []int32{
-		4, 1, 50, 675, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
+		4, 1, 50, 657, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
 		4, 2, 5, 7, 5, 2, 6, 7, 6, 2, 7, 7, 7, 2, 8, 7, 8, 2, 9, 7, 9, 2, 10, 7,
 		10, 2, 11, 7, 11, 2, 12, 7, 12, 2, 13, 7, 13, 2, 14, 7, 14, 2, 15, 7, 15,
 		2, 16, 7, 16, 2, 17, 7, 17, 2, 18, 7, 18, 2, 19, 7, 19, 2, 20, 7, 20, 2,
@@ -87,66 +87,64 @@ func fluxParserInit() {
 		8, 15, 10, 15, 12, 15, 249, 9, 15, 1, 15, 1, 15, 5, 15, 253, 8, 15, 10,
 		15, 12, 15, 256, 9, 15, 1, 15, 1, 15, 1, 15, 1, 15, 1, 15, 1, 15, 5, 15,
 		264, 8, 15, 10, 15, 12, 15, 267, 9, 15, 1, 15, 1, 15, 5, 15, 271, 8, 15,
-		10, 15, 12, 15, 274, 9, 15, 1, 15, 1, 15, 1, 15, 1, 15, 1, 15, 1, 15, 5,
-		15, 282, 8, 15, 10, 15, 12, 15, 285, 9, 15, 1, 15, 1, 15, 5, 15, 289, 8,
-		15, 10, 15, 12, 15, 292, 9, 15, 1, 15, 1, 15, 3, 15, 296, 8, 15, 1, 16,
-		1, 16, 1, 16, 1, 16, 5, 16, 302, 8, 16, 10, 16, 12, 16, 305, 9, 16, 1,
-		16, 1, 16, 5, 16, 309, 8, 16, 10, 16, 12, 16, 312, 9, 16, 1, 16, 1, 16,
-		1, 16, 1, 16, 1, 16, 1, 16, 5, 16, 320, 8, 16, 10, 16, 12, 16, 323, 9,
-		16, 1, 16, 1, 16, 5, 16, 327, 8, 16, 10, 16, 12, 16, 330, 9, 16, 1, 16,
-		1, 16, 3, 16, 334, 8, 16, 1, 17, 1, 17, 1, 17, 1, 17, 5, 17, 340, 8, 17,
+		10, 15, 12, 15, 274, 9, 15, 1, 15, 1, 15, 3, 15, 278, 8, 15, 1, 16, 1,
+		16, 1, 16, 1, 16, 5, 16, 284, 8, 16, 10, 16, 12, 16, 287, 9, 16, 1, 16,
+		1, 16, 5, 16, 291, 8, 16, 10, 16, 12, 16, 294, 9, 16, 1, 16, 1, 16, 1,
+		16, 1, 16, 1, 16, 1, 16, 5, 16, 302, 8, 16, 10, 16, 12, 16, 305, 9, 16,
+		1, 16, 1, 16, 5, 16, 309, 8, 16, 10, 16, 12, 16, 312, 9, 16, 1, 16, 1,
+		16, 3, 16, 316, 8, 16, 1, 17, 1, 17, 1, 17, 1, 17, 5, 17, 322, 8, 17, 10,
+		17, 12, 17, 325, 9, 17, 1, 17, 1, 17, 5, 17, 329, 8, 17, 10, 17, 12, 17,
+		332, 9, 17, 1, 17, 1, 17, 1, 17, 1, 17, 1, 17, 1, 17, 5, 17, 340, 8, 17,
 		10, 17, 12, 17, 343, 9, 17, 1, 17, 1, 17, 5, 17, 347, 8, 17, 10, 17, 12,
-		17, 350, 9, 17, 1, 17, 1, 17, 1, 17, 1, 17, 1, 17, 1, 17, 5, 17, 358, 8,
-		17, 10, 17, 12, 17, 361, 9, 17, 1, 17, 1, 17, 5, 17, 365, 8, 17, 10, 17,
-		12, 17, 368, 9, 17, 1, 17, 1, 17, 3, 17, 372, 8, 17, 1, 18, 1, 18, 1, 18,
-		1, 18, 1, 18, 1, 18, 1, 18, 5, 18, 381, 8, 18, 10, 18, 12, 18, 384, 9,
-		18, 1, 18, 1, 18, 3, 18, 388, 8, 18, 1, 19, 1, 19, 1, 19, 1, 19, 5, 19,
-		394, 8, 19, 10, 19, 12, 19, 397, 9, 19, 1, 19, 1, 19, 1, 19, 5, 19, 402,
-		8, 19, 10, 19, 12, 19, 405, 9, 19, 1, 19, 5, 19, 408, 8, 19, 10, 19, 12,
-		19, 411, 9, 19, 1, 19, 5, 19, 414, 8, 19, 10, 19, 12, 19, 417, 9, 19, 1,
-		19, 1, 19, 1, 19, 1, 19, 1, 19, 1, 19, 5, 19, 425, 8, 19, 10, 19, 12, 19,
-		428, 9, 19, 1, 19, 1, 19, 1, 19, 5, 19, 433, 8, 19, 10, 19, 12, 19, 436,
-		9, 19, 1, 19, 5, 19, 439, 8, 19, 10, 19, 12, 19, 442, 9, 19, 1, 19, 5,
-		19, 445, 8, 19, 10, 19, 12, 19, 448, 9, 19, 1, 19, 1, 19, 1, 19, 1, 19,
-		1, 19, 1, 19, 5, 19, 456, 8, 19, 10, 19, 12, 19, 459, 9, 19, 1, 19, 1,
-		19, 1, 19, 5, 19, 464, 8, 19, 10, 19, 12, 19, 467, 9, 19, 1, 19, 5, 19,
-		470, 8, 19, 10, 19, 12, 19, 473, 9, 19, 1, 19, 5, 19, 476, 8, 19, 10, 19,
-		12, 19, 479, 9, 19, 1, 19, 1, 19, 3, 19, 483, 8, 19, 1, 20, 1, 20, 1, 20,
-		5, 20, 488, 8, 20, 10, 20, 12, 20, 491, 9, 20, 1, 20, 1, 20, 5, 20, 495,
-		8, 20, 10, 20, 12, 20, 498, 9, 20, 1, 20, 1, 20, 1, 20, 1, 20, 1, 20, 5,
-		20, 505, 8, 20, 10, 20, 12, 20, 508, 9, 20, 1, 20, 1, 20, 5, 20, 512, 8,
-		20, 10, 20, 12, 20, 515, 9, 20, 1, 20, 1, 20, 3, 20, 519, 8, 20, 1, 21,
-		1, 21, 1, 22, 1, 22, 1, 23, 1, 23, 1, 24, 1, 24, 1, 25, 1, 25, 1, 26, 1,
-		26, 1, 26, 1, 26, 1, 26, 1, 26, 1, 26, 1, 26, 3, 26, 539, 8, 26, 1, 26,
-		3, 26, 542, 8, 26, 1, 26, 1, 26, 1, 26, 1, 26, 1, 26, 1, 26, 1, 26, 1,
-		26, 5, 26, 552, 8, 26, 10, 26, 12, 26, 555, 9, 26, 1, 27, 1, 27, 1, 27,
-		1, 27, 3, 27, 561, 8, 27, 1, 27, 1, 27, 1, 27, 5, 27, 566, 8, 27, 10, 27,
-		12, 27, 569, 9, 27, 1, 28, 1, 28, 1, 28, 1, 28, 1, 28, 1, 28, 1, 28, 1,
-		28, 1, 28, 1, 28, 1, 28, 1, 28, 1, 28, 1, 28, 3, 28, 585, 8, 28, 1, 28,
-		1, 28, 1, 28, 1, 28, 1, 28, 1, 28, 1, 28, 1, 28, 5, 28, 595, 8, 28, 10,
-		28, 12, 28, 598, 9, 28, 1, 29, 1, 29, 1, 29, 3, 29, 603, 8, 29, 1, 30,
-		1, 30, 1, 30, 1, 30, 3, 30, 609, 8, 30, 1, 31, 1, 31, 1, 31, 1, 31, 1,
+		17, 350, 9, 17, 1, 17, 1, 17, 3, 17, 354, 8, 17, 1, 18, 1, 18, 1, 18, 1,
+		18, 1, 18, 1, 18, 1, 18, 5, 18, 363, 8, 18, 10, 18, 12, 18, 366, 9, 18,
+		1, 18, 1, 18, 3, 18, 370, 8, 18, 1, 19, 1, 19, 1, 19, 1, 19, 5, 19, 376,
+		8, 19, 10, 19, 12, 19, 379, 9, 19, 1, 19, 1, 19, 1, 19, 5, 19, 384, 8,
+		19, 10, 19, 12, 19, 387, 9, 19, 1, 19, 5, 19, 390, 8, 19, 10, 19, 12, 19,
+		393, 9, 19, 1, 19, 5, 19, 396, 8, 19, 10, 19, 12, 19, 399, 9, 19, 1, 19,
+		1, 19, 1, 19, 1, 19, 1, 19, 1, 19, 5, 19, 407, 8, 19, 10, 19, 12, 19, 410,
+		9, 19, 1, 19, 1, 19, 1, 19, 5, 19, 415, 8, 19, 10, 19, 12, 19, 418, 9,
+		19, 1, 19, 5, 19, 421, 8, 19, 10, 19, 12, 19, 424, 9, 19, 1, 19, 5, 19,
+		427, 8, 19, 10, 19, 12, 19, 430, 9, 19, 1, 19, 1, 19, 1, 19, 1, 19, 1,
+		19, 1, 19, 5, 19, 438, 8, 19, 10, 19, 12, 19, 441, 9, 19, 1, 19, 1, 19,
+		1, 19, 5, 19, 446, 8, 19, 10, 19, 12, 19, 449, 9, 19, 1, 19, 5, 19, 452,
+		8, 19, 10, 19, 12, 19, 455, 9, 19, 1, 19, 5, 19, 458, 8, 19, 10, 19, 12,
+		19, 461, 9, 19, 1, 19, 1, 19, 3, 19, 465, 8, 19, 1, 20, 1, 20, 1, 20, 5,
+		20, 470, 8, 20, 10, 20, 12, 20, 473, 9, 20, 1, 20, 1, 20, 5, 20, 477, 8,
+		20, 10, 20, 12, 20, 480, 9, 20, 1, 20, 1, 20, 1, 20, 1, 20, 1, 20, 5, 20,
+		487, 8, 20, 10, 20, 12, 20, 490, 9, 20, 1, 20, 1, 20, 5, 20, 494, 8, 20,
+		10, 20, 12, 20, 497, 9, 20, 1, 20, 1, 20, 3, 20, 501, 8, 20, 1, 21, 1,
+		21, 1, 22, 1, 22, 1, 23, 1, 23, 1, 24, 1, 24, 1, 25, 1, 25, 1, 26, 1, 26,
+		1, 26, 1, 26, 1, 26, 1, 26, 1, 26, 1, 26, 3, 26, 521, 8, 26, 1, 26, 3,
+		26, 524, 8, 26, 1, 26, 1, 26, 1, 26, 1, 26, 1, 26, 1, 26, 1, 26, 1, 26,
+		5, 26, 534, 8, 26, 10, 26, 12, 26, 537, 9, 26, 1, 27, 1, 27, 1, 27, 1,
+		27, 3, 27, 543, 8, 27, 1, 27, 1, 27, 1, 27, 5, 27, 548, 8, 27, 10, 27,
+		12, 27, 551, 9, 27, 1, 28, 1, 28, 1, 28, 1, 28, 1, 28, 1, 28, 1, 28, 1,
+		28, 1, 28, 1, 28, 1, 28, 1, 28, 1, 28, 1, 28, 3, 28, 567, 8, 28, 1, 28,
+		1, 28, 1, 28, 1, 28, 1, 28, 1, 28, 1, 28, 1, 28, 5, 28, 577, 8, 28, 10,
+		28, 12, 28, 580, 9, 28, 1, 29, 1, 29, 1, 29, 3, 29, 585, 8, 29, 1, 30,
+		1, 30, 1, 30, 1, 30, 3, 30, 591, 8, 30, 1, 31, 1, 31, 1, 31, 1, 31, 1,
 		31, 1, 32, 1, 32, 1, 32, 1, 32, 1, 32, 1, 32, 1, 32, 1, 32, 1, 32, 1, 32,
-		1, 32, 1, 32, 1, 32, 1, 32, 1, 32, 3, 32, 631, 8, 32, 1, 33, 1, 33, 1,
-		33, 3, 33, 636, 8, 33, 1, 33, 1, 33, 3, 33, 640, 8, 33, 1, 34, 1, 34, 1,
-		34, 1, 34, 1, 34, 1, 34, 1, 34, 1, 34, 1, 34, 1, 34, 5, 34, 652, 8, 34,
-		10, 34, 12, 34, 655, 9, 34, 3, 34, 657, 8, 34, 1, 34, 1, 34, 1, 34, 1,
-		34, 1, 34, 1, 34, 5, 34, 665, 8, 34, 10, 34, 12, 34, 668, 9, 34, 3, 34,
-		670, 8, 34, 1, 34, 3, 34, 673, 8, 34, 1, 34, 0, 3, 52, 54, 56, 35, 0, 2,
+		1, 32, 1, 32, 1, 32, 1, 32, 1, 32, 3, 32, 613, 8, 32, 1, 33, 1, 33, 1,
+		33, 3, 33, 618, 8, 33, 1, 33, 1, 33, 3, 33, 622, 8, 33, 1, 34, 1, 34, 1,
+		34, 1, 34, 1, 34, 1, 34, 1, 34, 1, 34, 1, 34, 1, 34, 5, 34, 634, 8, 34,
+		10, 34, 12, 34, 637, 9, 34, 3, 34, 639, 8, 34, 1, 34, 1, 34, 1, 34, 1,
+		34, 1, 34, 1, 34, 5, 34, 647, 8, 34, 10, 34, 12, 34, 650, 9, 34, 3, 34,
+		652, 8, 34, 1, 34, 3, 34, 655, 8, 34, 1, 34, 0, 3, 52, 54, 56, 35, 0, 2,
 		4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40,
 		42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 0, 8, 4, 0, 2,
 		2, 4, 4, 6, 6, 48, 48, 4, 0, 2, 2, 4, 4, 6, 6, 11, 11, 4, 0, 1, 1, 3, 3,
 		5, 5, 10, 10, 1, 0, 45, 46, 1, 0, 31, 34, 1, 0, 29, 30, 1, 0, 41, 43, 1,
-		0, 35, 40, 743, 0, 73, 1, 0, 0, 0, 2, 84, 1, 0, 0, 0, 4, 91, 1, 0, 0, 0,
+		0, 35, 40, 722, 0, 73, 1, 0, 0, 0, 2, 84, 1, 0, 0, 0, 4, 91, 1, 0, 0, 0,
 		6, 93, 1, 0, 0, 0, 8, 102, 1, 0, 0, 0, 10, 107, 1, 0, 0, 0, 12, 184, 1,
 		0, 0, 0, 14, 186, 1, 0, 0, 0, 16, 190, 1, 0, 0, 0, 18, 192, 1, 0, 0, 0,
 		20, 213, 1, 0, 0, 0, 22, 215, 1, 0, 0, 0, 24, 217, 1, 0, 0, 0, 26, 219,
-		1, 0, 0, 0, 28, 239, 1, 0, 0, 0, 30, 295, 1, 0, 0, 0, 32, 333, 1, 0, 0,
-		0, 34, 371, 1, 0, 0, 0, 36, 387, 1, 0, 0, 0, 38, 482, 1, 0, 0, 0, 40, 518,
-		1, 0, 0, 0, 42, 520, 1, 0, 0, 0, 44, 522, 1, 0, 0, 0, 46, 524, 1, 0, 0,
-		0, 48, 526, 1, 0, 0, 0, 50, 528, 1, 0, 0, 0, 52, 541, 1, 0, 0, 0, 54, 560,
-		1, 0, 0, 0, 56, 584, 1, 0, 0, 0, 58, 602, 1, 0, 0, 0, 60, 608, 1, 0, 0,
-		0, 62, 610, 1, 0, 0, 0, 64, 630, 1, 0, 0, 0, 66, 639, 1, 0, 0, 0, 68, 672,
+		1, 0, 0, 0, 28, 239, 1, 0, 0, 0, 30, 277, 1, 0, 0, 0, 32, 315, 1, 0, 0,
+		0, 34, 353, 1, 0, 0, 0, 36, 369, 1, 0, 0, 0, 38, 464, 1, 0, 0, 0, 40, 500,
+		1, 0, 0, 0, 42, 502, 1, 0, 0, 0, 44, 504, 1, 0, 0, 0, 46, 506, 1, 0, 0,
+		0, 48, 508, 1, 0, 0, 0, 50, 510, 1, 0, 0, 0, 52, 523, 1, 0, 0, 0, 54, 542,
+		1, 0, 0, 0, 56, 566, 1, 0, 0, 0, 58, 584, 1, 0, 0, 0, 60, 590, 1, 0, 0,
+		0, 62, 592, 1, 0, 0, 0, 64, 612, 1, 0, 0, 0, 66, 621, 1, 0, 0, 0, 68, 654,
 		1, 0, 0, 0, 70, 72, 3, 2, 1, 0, 71, 70, 1, 0, 0, 0, 72, 75, 1, 0, 0, 0,
 		73, 71, 1, 0, 0, 0, 73, 74, 1, 0, 0, 0, 74, 76, 1, 0, 0, 0, 75, 73, 1,
 		0, 0, 0, 76, 77, 5, 0, 0, 1, 77, 1, 1, 0, 0, 0, 78, 85, 3, 4, 2, 0, 79,
@@ -213,11 +211,11 @@ func fluxParserInit() {
 		248, 1, 0, 0, 0, 248, 250, 1, 0, 0, 0, 249, 247, 1, 0, 0, 0, 250, 254,
 		5, 1, 0, 0, 251, 253, 5, 49, 0, 0, 252, 251, 1, 0, 0, 0, 253, 256, 1, 0,
 		0, 0, 254, 252, 1, 0, 0, 0, 254, 255, 1, 0, 0, 0, 255, 257, 1, 0, 0, 0,
-		256, 254, 1, 0, 0, 0, 257, 258, 5, 19, 0, 0, 258, 296, 1, 0, 0, 0, 259,
+		256, 254, 1, 0, 0, 0, 257, 258, 5, 19, 0, 0, 258, 278, 1, 0, 0, 0, 259,
 		260, 5, 2, 0, 0, 260, 261, 3, 22, 11, 0, 261, 265, 5, 18, 0, 0, 262, 264,
 		5, 49, 0, 0, 263, 262, 1, 0, 0, 0, 264, 267, 1, 0, 0, 0, 265, 263, 1, 0,
 		0, 0, 265, 266, 1, 0, 0, 0, 266, 268, 1, 0, 0, 0, 267, 265, 1, 0, 0, 0,
-		268, 272, 3, 58, 29, 0, 269, 271, 5, 49, 0, 0, 270, 269, 1, 0, 0, 0, 271,
+		268, 272, 3, 54, 27, 0, 269, 271, 5, 49, 0, 0, 270, 269, 1, 0, 0, 0, 271,
 		274, 1, 0, 0, 0, 272, 270, 1, 0, 0, 0, 272, 273, 1, 0, 0, 0, 273, 275,
 		1, 0, 0, 0, 274, 272, 1, 0, 0, 0, 275, 276, 5, 19, 0, 0, 276, 296, 1, 0,
 		0, 0, 277, 278, 5, 2, 0, 0, 278, 279, 3, 22, 11, 0, 279, 283, 5, 18, 0,
@@ -3557,7 +3555,6 @@ type IString_var_declarationContext interface {
 	R_BLOCK() antlr.TerminalNode
 	AllNEWLINE() []antlr.TerminalNode
 	NEWLINE(i int) antlr.TerminalNode
-	Get_var() IGet_varContext
 	Text_expression() IText_expressionContext
 
 	// IsString_var_declarationContext differentiates from other interfaces.
@@ -3636,22 +3633,6 @@ func (s *String_var_declarationContext) NEWLINE(i int) antlr.TerminalNode {
 	return s.GetToken(FluxNEWLINE, i)
 }
 
-func (s *String_var_declarationContext) Get_var() IGet_varContext {
-	var t antlr.RuleContext
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IGet_varContext); ok {
-			t = ctx.(antlr.RuleContext)
-			break
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IGet_varContext)
-}
-
 func (s *String_var_declarationContext) Text_expression() IText_expressionContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
@@ -3703,13 +3684,13 @@ func (p *Flux) String_var_declaration() (localctx IString_var_declarationContext
 	p.EnterRule(localctx, 30, FluxRULE_string_var_declaration)
 	var _la int
 
-	p.SetState(295)
+	p.SetState(277)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
-	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 24, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 22, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
@@ -3845,7 +3826,7 @@ func (p *Flux) String_var_declaration() (localctx IString_var_declarationContext
 		}
 		{
 			p.SetState(268)
-			p.Get_var()
+			p.text_expression(0)
 		}
 		p.SetState(272)
 		p.GetErrorHandler().Sync(p)
@@ -3873,89 +3854,6 @@ func (p *Flux) String_var_declaration() (localctx IString_var_declarationContext
 		}
 		{
 			p.SetState(275)
-			p.Match(FluxR_BLOCK)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-
-	case 3:
-		p.EnterOuterAlt(localctx, 3)
-		{
-			p.SetState(277)
-			p.Match(FluxTEXT_TYPE)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-		{
-			p.SetState(278)
-			p.Var_name()
-		}
-		{
-			p.SetState(279)
-			p.Match(FluxL_BLOCK)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-		p.SetState(283)
-		p.GetErrorHandler().Sync(p)
-		if p.HasError() {
-			goto errorExit
-		}
-		_la = p.GetTokenStream().LA(1)
-
-		for _la == FluxNEWLINE {
-			{
-				p.SetState(280)
-				p.Match(FluxNEWLINE)
-				if p.HasError() {
-					// Recognition error - abort rule
-					goto errorExit
-				}
-			}
-
-			p.SetState(285)
-			p.GetErrorHandler().Sync(p)
-			if p.HasError() {
-				goto errorExit
-			}
-			_la = p.GetTokenStream().LA(1)
-		}
-		{
-			p.SetState(286)
-			p.text_expression(0)
-		}
-		p.SetState(290)
-		p.GetErrorHandler().Sync(p)
-		if p.HasError() {
-			goto errorExit
-		}
-		_la = p.GetTokenStream().LA(1)
-
-		for _la == FluxNEWLINE {
-			{
-				p.SetState(287)
-				p.Match(FluxNEWLINE)
-				if p.HasError() {
-					// Recognition error - abort rule
-					goto errorExit
-				}
-			}
-
-			p.SetState(292)
-			p.GetErrorHandler().Sync(p)
-			if p.HasError() {
-				goto errorExit
-			}
-			_la = p.GetTokenStream().LA(1)
-		}
-		{
-			p.SetState(293)
 			p.Match(FluxR_BLOCK)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -4124,15 +4022,102 @@ func (p *Flux) Number_var_declaration() (localctx INumber_var_declarationContext
 	p.EnterRule(localctx, 32, FluxRULE_number_var_declaration)
 	var _la int
 
-	p.SetState(333)
+	p.SetState(315)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
-	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 29, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 27, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
+		{
+			p.SetState(279)
+			p.Match(FluxNUMBER_TYPE)
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+		{
+			p.SetState(280)
+			p.Var_name()
+		}
+		{
+			p.SetState(281)
+			p.Match(FluxL_BLOCK)
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+		p.SetState(285)
+		p.GetErrorHandler().Sync(p)
+		if p.HasError() {
+			goto errorExit
+		}
+		_la = p.GetTokenStream().LA(1)
+
+		for _la == FluxNEWLINE {
+			{
+				p.SetState(282)
+				p.Match(FluxNEWLINE)
+				if p.HasError() {
+					// Recognition error - abort rule
+					goto errorExit
+				}
+			}
+
+			p.SetState(287)
+			p.GetErrorHandler().Sync(p)
+			if p.HasError() {
+				goto errorExit
+			}
+			_la = p.GetTokenStream().LA(1)
+		}
+		{
+			p.SetState(288)
+			p.Match(FluxNUMBER)
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+		p.SetState(292)
+		p.GetErrorHandler().Sync(p)
+		if p.HasError() {
+			goto errorExit
+		}
+		_la = p.GetTokenStream().LA(1)
+
+		for _la == FluxNEWLINE {
+			{
+				p.SetState(289)
+				p.Match(FluxNEWLINE)
+				if p.HasError() {
+					// Recognition error - abort rule
+					goto errorExit
+				}
+			}
+
+			p.SetState(294)
+			p.GetErrorHandler().Sync(p)
+			if p.HasError() {
+				goto errorExit
+			}
+			_la = p.GetTokenStream().LA(1)
+		}
+		{
+			p.SetState(295)
+			p.Match(FluxR_BLOCK)
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+
+	case 2:
+		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(297)
 			p.Match(FluxNUMBER_TYPE)
@@ -4179,11 +4164,7 @@ func (p *Flux) Number_var_declaration() (localctx INumber_var_declarationContext
 		}
 		{
 			p.SetState(306)
-			p.Match(FluxNUMBER)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
+			p.Math_expression()
 		}
 		p.SetState(310)
 		p.GetErrorHandler().Sync(p)
@@ -4211,89 +4192,6 @@ func (p *Flux) Number_var_declaration() (localctx INumber_var_declarationContext
 		}
 		{
 			p.SetState(313)
-			p.Match(FluxR_BLOCK)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-
-	case 2:
-		p.EnterOuterAlt(localctx, 2)
-		{
-			p.SetState(315)
-			p.Match(FluxNUMBER_TYPE)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-		{
-			p.SetState(316)
-			p.Var_name()
-		}
-		{
-			p.SetState(317)
-			p.Match(FluxL_BLOCK)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-		p.SetState(321)
-		p.GetErrorHandler().Sync(p)
-		if p.HasError() {
-			goto errorExit
-		}
-		_la = p.GetTokenStream().LA(1)
-
-		for _la == FluxNEWLINE {
-			{
-				p.SetState(318)
-				p.Match(FluxNEWLINE)
-				if p.HasError() {
-					// Recognition error - abort rule
-					goto errorExit
-				}
-			}
-
-			p.SetState(323)
-			p.GetErrorHandler().Sync(p)
-			if p.HasError() {
-				goto errorExit
-			}
-			_la = p.GetTokenStream().LA(1)
-		}
-		{
-			p.SetState(324)
-			p.Math_expression()
-		}
-		p.SetState(328)
-		p.GetErrorHandler().Sync(p)
-		if p.HasError() {
-			goto errorExit
-		}
-		_la = p.GetTokenStream().LA(1)
-
-		for _la == FluxNEWLINE {
-			{
-				p.SetState(325)
-				p.Match(FluxNEWLINE)
-				if p.HasError() {
-					// Recognition error - abort rule
-					goto errorExit
-				}
-			}
-
-			p.SetState(330)
-			p.GetErrorHandler().Sync(p)
-			if p.HasError() {
-				goto errorExit
-			}
-			_la = p.GetTokenStream().LA(1)
-		}
-		{
-			p.SetState(331)
 			p.Match(FluxR_BLOCK)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -4462,15 +4360,102 @@ func (p *Flux) Boolean_var_declaration() (localctx IBoolean_var_declarationConte
 	p.EnterRule(localctx, 34, FluxRULE_boolean_var_declaration)
 	var _la int
 
-	p.SetState(371)
+	p.SetState(353)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
-	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 34, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 32, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
+		{
+			p.SetState(317)
+			p.Match(FluxBOOLEAN_TYPE)
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+		{
+			p.SetState(318)
+			p.Var_name()
+		}
+		{
+			p.SetState(319)
+			p.Match(FluxL_BLOCK)
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+		p.SetState(323)
+		p.GetErrorHandler().Sync(p)
+		if p.HasError() {
+			goto errorExit
+		}
+		_la = p.GetTokenStream().LA(1)
+
+		for _la == FluxNEWLINE {
+			{
+				p.SetState(320)
+				p.Match(FluxNEWLINE)
+				if p.HasError() {
+					// Recognition error - abort rule
+					goto errorExit
+				}
+			}
+
+			p.SetState(325)
+			p.GetErrorHandler().Sync(p)
+			if p.HasError() {
+				goto errorExit
+			}
+			_la = p.GetTokenStream().LA(1)
+		}
+		{
+			p.SetState(326)
+			p.Match(FluxBOOLEAN)
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+		p.SetState(330)
+		p.GetErrorHandler().Sync(p)
+		if p.HasError() {
+			goto errorExit
+		}
+		_la = p.GetTokenStream().LA(1)
+
+		for _la == FluxNEWLINE {
+			{
+				p.SetState(327)
+				p.Match(FluxNEWLINE)
+				if p.HasError() {
+					// Recognition error - abort rule
+					goto errorExit
+				}
+			}
+
+			p.SetState(332)
+			p.GetErrorHandler().Sync(p)
+			if p.HasError() {
+				goto errorExit
+			}
+			_la = p.GetTokenStream().LA(1)
+		}
+		{
+			p.SetState(333)
+			p.Match(FluxR_BLOCK)
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+
+	case 2:
+		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(335)
 			p.Match(FluxBOOLEAN_TYPE)
@@ -4517,11 +4502,7 @@ func (p *Flux) Boolean_var_declaration() (localctx IBoolean_var_declarationConte
 		}
 		{
 			p.SetState(344)
-			p.Match(FluxBOOLEAN)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
+			p.logical_expression(0)
 		}
 		p.SetState(348)
 		p.GetErrorHandler().Sync(p)
@@ -4841,53 +4822,53 @@ func (p *Flux) Single_var_declaration() (localctx ISingle_var_declarationContext
 	p.EnterRule(localctx, 36, FluxRULE_single_var_declaration)
 	var _la int
 
-	p.SetState(387)
+	p.SetState(369)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
-	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 36, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 34, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(373)
+			p.SetState(355)
 			p.String_var_declaration()
 		}
 
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(374)
+			p.SetState(356)
 			p.Number_var_declaration()
 		}
 
 	case 3:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(375)
+			p.SetState(357)
 			p.Boolean_var_declaration()
 		}
 
 	case 4:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(376)
+			p.SetState(358)
 			p.Var_type()
 		}
 		{
-			p.SetState(377)
+			p.SetState(359)
 			p.Var_name()
 		}
 		{
-			p.SetState(378)
+			p.SetState(360)
 			p.Match(FluxL_BLOCK)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
-		p.SetState(382)
+		p.SetState(364)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -4896,7 +4877,7 @@ func (p *Flux) Single_var_declaration() (localctx ISingle_var_declarationContext
 
 		for _la == FluxNEWLINE {
 			{
-				p.SetState(379)
+				p.SetState(361)
 				p.Match(FluxNEWLINE)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -4904,7 +4885,7 @@ func (p *Flux) Single_var_declaration() (localctx ISingle_var_declarationContext
 				}
 			}
 
-			p.SetState(384)
+			p.SetState(366)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -4912,7 +4893,7 @@ func (p *Flux) Single_var_declaration() (localctx ISingle_var_declarationContext
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(385)
+			p.SetState(367)
 			p.Match(FluxR_BLOCK)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -5208,7 +5189,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 	p.EnterRule(localctx, 38, FluxRULE_array_var_declaration)
 	var _la int
 
-	p.SetState(482)
+	p.SetState(464)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -5218,7 +5199,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 	case FluxTEXT_TYPE:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(389)
+			p.SetState(371)
 			p.Match(FluxTEXT_TYPE)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -5226,18 +5207,18 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 			}
 		}
 		{
-			p.SetState(390)
+			p.SetState(372)
 			p.Var_name()
 		}
 		{
-			p.SetState(391)
+			p.SetState(373)
 			p.Match(FluxL_SQUARE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
-		p.SetState(395)
+		p.SetState(377)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -5246,7 +5227,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 
 		for _la == FluxNEWLINE {
 			{
-				p.SetState(392)
+				p.SetState(374)
 				p.Match(FluxNEWLINE)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -5254,7 +5235,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 				}
 			}
 
-			p.SetState(397)
+			p.SetState(379)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -5262,10 +5243,10 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(398)
+			p.SetState(380)
 			p.text_expression(0)
 		}
-		p.SetState(409)
+		p.SetState(391)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -5274,14 +5255,14 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 
 		for _la == FluxCOMMA {
 			{
-				p.SetState(399)
+				p.SetState(381)
 				p.Match(FluxCOMMA)
 				if p.HasError() {
 					// Recognition error - abort rule
 					goto errorExit
 				}
 			}
-			p.SetState(403)
+			p.SetState(385)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -5290,7 +5271,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 
 			for _la == FluxNEWLINE {
 				{
-					p.SetState(400)
+					p.SetState(382)
 					p.Match(FluxNEWLINE)
 					if p.HasError() {
 						// Recognition error - abort rule
@@ -5298,7 +5279,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 					}
 				}
 
-				p.SetState(405)
+				p.SetState(387)
 				p.GetErrorHandler().Sync(p)
 				if p.HasError() {
 					goto errorExit
@@ -5306,18 +5287,18 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 				_la = p.GetTokenStream().LA(1)
 			}
 			{
-				p.SetState(406)
+				p.SetState(388)
 				p.text_expression(0)
 			}
 
-			p.SetState(411)
+			p.SetState(393)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
 			}
 			_la = p.GetTokenStream().LA(1)
 		}
-		p.SetState(415)
+		p.SetState(397)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -5326,7 +5307,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 
 		for _la == FluxNEWLINE {
 			{
-				p.SetState(412)
+				p.SetState(394)
 				p.Match(FluxNEWLINE)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -5334,7 +5315,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 				}
 			}
 
-			p.SetState(417)
+			p.SetState(399)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -5342,7 +5323,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(418)
+			p.SetState(400)
 			p.Match(FluxR_SQUARE)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -5353,7 +5334,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 	case FluxNUMBER_TYPE:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(420)
+			p.SetState(402)
 			p.Match(FluxNUMBER_TYPE)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -5361,18 +5342,18 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 			}
 		}
 		{
-			p.SetState(421)
+			p.SetState(403)
 			p.Var_name()
 		}
 		{
-			p.SetState(422)
+			p.SetState(404)
 			p.Match(FluxL_SQUARE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
-		p.SetState(426)
+		p.SetState(408)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -5381,7 +5362,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 
 		for _la == FluxNEWLINE {
 			{
-				p.SetState(423)
+				p.SetState(405)
 				p.Match(FluxNEWLINE)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -5389,7 +5370,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 				}
 			}
 
-			p.SetState(428)
+			p.SetState(410)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -5397,10 +5378,10 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(429)
+			p.SetState(411)
 			p.numeric_expression(0)
 		}
-		p.SetState(440)
+		p.SetState(422)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -5409,14 +5390,14 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 
 		for _la == FluxCOMMA {
 			{
-				p.SetState(430)
+				p.SetState(412)
 				p.Match(FluxCOMMA)
 				if p.HasError() {
 					// Recognition error - abort rule
 					goto errorExit
 				}
 			}
-			p.SetState(434)
+			p.SetState(416)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -5425,7 +5406,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 
 			for _la == FluxNEWLINE {
 				{
-					p.SetState(431)
+					p.SetState(413)
 					p.Match(FluxNEWLINE)
 					if p.HasError() {
 						// Recognition error - abort rule
@@ -5433,7 +5414,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 					}
 				}
 
-				p.SetState(436)
+				p.SetState(418)
 				p.GetErrorHandler().Sync(p)
 				if p.HasError() {
 					goto errorExit
@@ -5441,18 +5422,18 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 				_la = p.GetTokenStream().LA(1)
 			}
 			{
-				p.SetState(437)
+				p.SetState(419)
 				p.numeric_expression(0)
 			}
 
-			p.SetState(442)
+			p.SetState(424)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
 			}
 			_la = p.GetTokenStream().LA(1)
 		}
-		p.SetState(446)
+		p.SetState(428)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -5461,7 +5442,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 
 		for _la == FluxNEWLINE {
 			{
-				p.SetState(443)
+				p.SetState(425)
 				p.Match(FluxNEWLINE)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -5469,7 +5450,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 				}
 			}
 
-			p.SetState(448)
+			p.SetState(430)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -5477,7 +5458,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(449)
+			p.SetState(431)
 			p.Match(FluxR_SQUARE)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -5488,7 +5469,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 	case FluxBOOLEAN_TYPE:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(451)
+			p.SetState(433)
 			p.Match(FluxBOOLEAN_TYPE)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -5496,18 +5477,18 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 			}
 		}
 		{
-			p.SetState(452)
+			p.SetState(434)
 			p.Var_name()
 		}
 		{
-			p.SetState(453)
+			p.SetState(435)
 			p.Match(FluxL_SQUARE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
-		p.SetState(457)
+		p.SetState(439)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -5516,7 +5497,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 
 		for _la == FluxNEWLINE {
 			{
-				p.SetState(454)
+				p.SetState(436)
 				p.Match(FluxNEWLINE)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -5524,7 +5505,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 				}
 			}
 
-			p.SetState(459)
+			p.SetState(441)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -5532,10 +5513,10 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(460)
+			p.SetState(442)
 			p.logical_expression(0)
 		}
-		p.SetState(471)
+		p.SetState(453)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -5544,14 +5525,14 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 
 		for _la == FluxCOMMA {
 			{
-				p.SetState(461)
+				p.SetState(443)
 				p.Match(FluxCOMMA)
 				if p.HasError() {
 					// Recognition error - abort rule
 					goto errorExit
 				}
 			}
-			p.SetState(465)
+			p.SetState(447)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -5560,7 +5541,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 
 			for _la == FluxNEWLINE {
 				{
-					p.SetState(462)
+					p.SetState(444)
 					p.Match(FluxNEWLINE)
 					if p.HasError() {
 						// Recognition error - abort rule
@@ -5568,7 +5549,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 					}
 				}
 
-				p.SetState(467)
+				p.SetState(449)
 				p.GetErrorHandler().Sync(p)
 				if p.HasError() {
 					goto errorExit
@@ -5576,18 +5557,18 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 				_la = p.GetTokenStream().LA(1)
 			}
 			{
-				p.SetState(468)
+				p.SetState(450)
 				p.logical_expression(0)
 			}
 
-			p.SetState(473)
+			p.SetState(455)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
 			}
 			_la = p.GetTokenStream().LA(1)
 		}
-		p.SetState(477)
+		p.SetState(459)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -5596,7 +5577,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 
 		for _la == FluxNEWLINE {
 			{
-				p.SetState(474)
+				p.SetState(456)
 				p.Match(FluxNEWLINE)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -5604,7 +5585,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 				}
 			}
 
-			p.SetState(479)
+			p.SetState(461)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -5612,7 +5593,7 @@ func (p *Flux) Array_var_declaration() (localctx IArray_var_declarationContext) 
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(480)
+			p.SetState(462)
 			p.Match(FluxR_SQUARE)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -5789,28 +5770,28 @@ func (p *Flux) Var_assignment() (localctx IVar_assignmentContext) {
 	p.EnterRule(localctx, 40, FluxRULE_var_assignment)
 	var _la int
 
-	p.SetState(518)
+	p.SetState(500)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
-	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 54, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 52, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(484)
+			p.SetState(466)
 			p.Var_name()
 		}
 		{
-			p.SetState(485)
+			p.SetState(467)
 			p.Match(FluxL_BLOCK)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
-		p.SetState(489)
+		p.SetState(471)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -5819,7 +5800,7 @@ func (p *Flux) Var_assignment() (localctx IVar_assignmentContext) {
 
 		for _la == FluxNEWLINE {
 			{
-				p.SetState(486)
+				p.SetState(468)
 				p.Match(FluxNEWLINE)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -5827,7 +5808,7 @@ func (p *Flux) Var_assignment() (localctx IVar_assignmentContext) {
 				}
 			}
 
-			p.SetState(491)
+			p.SetState(473)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -5835,10 +5816,10 @@ func (p *Flux) Var_assignment() (localctx IVar_assignmentContext) {
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(492)
+			p.SetState(474)
 			p.Get_var()
 		}
-		p.SetState(496)
+		p.SetState(478)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -5847,7 +5828,7 @@ func (p *Flux) Var_assignment() (localctx IVar_assignmentContext) {
 
 		for _la == FluxNEWLINE {
 			{
-				p.SetState(493)
+				p.SetState(475)
 				p.Match(FluxNEWLINE)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -5855,7 +5836,7 @@ func (p *Flux) Var_assignment() (localctx IVar_assignmentContext) {
 				}
 			}
 
-			p.SetState(498)
+			p.SetState(480)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -5863,7 +5844,7 @@ func (p *Flux) Var_assignment() (localctx IVar_assignmentContext) {
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(499)
+			p.SetState(481)
 			p.Match(FluxR_BLOCK)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -5874,18 +5855,18 @@ func (p *Flux) Var_assignment() (localctx IVar_assignmentContext) {
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(501)
+			p.SetState(483)
 			p.Var_name()
 		}
 		{
-			p.SetState(502)
+			p.SetState(484)
 			p.Match(FluxL_BLOCK)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
-		p.SetState(506)
+		p.SetState(488)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -5894,7 +5875,7 @@ func (p *Flux) Var_assignment() (localctx IVar_assignmentContext) {
 
 		for _la == FluxNEWLINE {
 			{
-				p.SetState(503)
+				p.SetState(485)
 				p.Match(FluxNEWLINE)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -5902,7 +5883,7 @@ func (p *Flux) Var_assignment() (localctx IVar_assignmentContext) {
 				}
 			}
 
-			p.SetState(508)
+			p.SetState(490)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -5910,10 +5891,10 @@ func (p *Flux) Var_assignment() (localctx IVar_assignmentContext) {
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(509)
+			p.SetState(491)
 			p.Math_expression()
 		}
-		p.SetState(513)
+		p.SetState(495)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -5922,7 +5903,7 @@ func (p *Flux) Var_assignment() (localctx IVar_assignmentContext) {
 
 		for _la == FluxNEWLINE {
 			{
-				p.SetState(510)
+				p.SetState(492)
 				p.Match(FluxNEWLINE)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -5930,7 +5911,7 @@ func (p *Flux) Var_assignment() (localctx IVar_assignmentContext) {
 				}
 			}
 
-			p.SetState(515)
+			p.SetState(497)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -5938,7 +5919,7 @@ func (p *Flux) Var_assignment() (localctx IVar_assignmentContext) {
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(516)
+			p.SetState(498)
 			p.Match(FluxR_BLOCK)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -6065,7 +6046,7 @@ func (p *Flux) Op_level1() (localctx IOp_level1Context) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(520)
+		p.SetState(502)
 		_la = p.GetTokenStream().LA(1)
 
 		if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&32212254720) != 0) {
@@ -6181,7 +6162,7 @@ func (p *Flux) Op_level2() (localctx IOp_level2Context) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(522)
+		p.SetState(504)
 		_la = p.GetTokenStream().LA(1)
 
 		if !(_la == FluxOP_PLUS || _la == FluxOP_MINUS) {
@@ -6302,7 +6283,7 @@ func (p *Flux) Op_level3() (localctx IOp_level3Context) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(524)
+		p.SetState(506)
 		_la = p.GetTokenStream().LA(1)
 
 		if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&15393162788864) != 0) {
@@ -6438,7 +6419,7 @@ func (p *Flux) Op_level4() (localctx IOp_level4Context) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(526)
+		p.SetState(508)
 		_la = p.GetTokenStream().LA(1)
 
 		if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&2164663517184) != 0) {
@@ -6547,7 +6528,7 @@ func (p *Flux) Op_level5() (localctx IOp_level5Context) {
 	p.EnterRule(localctx, 50, FluxRULE_op_level5)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(528)
+		p.SetState(510)
 		p.Match(FluxOP_NOT)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -6797,16 +6778,16 @@ func (p *Flux) numeric_expression(_p int) (localctx INumeric_expressionContext) 
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(541)
+	p.SetState(523)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
-	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 56, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 54, p.GetParserRuleContext()) {
 	case 1:
 		{
-			p.SetState(531)
+			p.SetState(513)
 			p.Match(FluxL_PAREN)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -6814,11 +6795,11 @@ func (p *Flux) numeric_expression(_p int) (localctx INumeric_expressionContext) 
 			}
 		}
 		{
-			p.SetState(532)
+			p.SetState(514)
 			p.numeric_expression(0)
 		}
 		{
-			p.SetState(533)
+			p.SetState(515)
 			p.Match(FluxR_PAREN)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -6828,18 +6809,18 @@ func (p *Flux) numeric_expression(_p int) (localctx INumeric_expressionContext) 
 
 	case 2:
 		{
-			p.SetState(535)
+			p.SetState(517)
 			p.Get_var()
 		}
 
 	case 3:
 		{
-			p.SetState(536)
+			p.SetState(518)
 			p.Function_call()
 		}
 
 	case 4:
-		p.SetState(538)
+		p.SetState(520)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -6848,7 +6829,7 @@ func (p *Flux) numeric_expression(_p int) (localctx INumeric_expressionContext) 
 
 		if _la == FluxOP_PLUS || _la == FluxOP_MINUS {
 			{
-				p.SetState(537)
+				p.SetState(519)
 				_la = p.GetTokenStream().LA(1)
 
 				if !(_la == FluxOP_PLUS || _la == FluxOP_MINUS) {
@@ -6861,7 +6842,7 @@ func (p *Flux) numeric_expression(_p int) (localctx INumeric_expressionContext) 
 
 		}
 		{
-			p.SetState(540)
+			p.SetState(522)
 			p.Match(FluxNUMBER)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -6873,12 +6854,12 @@ func (p *Flux) numeric_expression(_p int) (localctx INumeric_expressionContext) 
 		goto errorExit
 	}
 	p.GetParserRuleContext().SetStop(p.GetTokenStream().LT(-1))
-	p.SetState(553)
+	p.SetState(535)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
-	_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 58, p.GetParserRuleContext())
+	_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 56, p.GetParserRuleContext())
 	if p.HasError() {
 		goto errorExit
 	}
@@ -6888,46 +6869,46 @@ func (p *Flux) numeric_expression(_p int) (localctx INumeric_expressionContext) 
 				p.TriggerExitRuleEvent()
 			}
 			_prevctx = localctx
-			p.SetState(551)
+			p.SetState(533)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
 			}
 
-			switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 57, p.GetParserRuleContext()) {
+			switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 55, p.GetParserRuleContext()) {
 			case 1:
 				localctx = NewNumeric_expressionContext(p, _parentctx, _parentState)
 				p.PushNewRecursionContext(localctx, _startState, FluxRULE_numeric_expression)
-				p.SetState(543)
+				p.SetState(525)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 5)) {
 					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 5)", ""))
 					goto errorExit
 				}
 				{
-					p.SetState(544)
+					p.SetState(526)
 					p.Op_level1()
 				}
 				{
-					p.SetState(545)
+					p.SetState(527)
 					p.numeric_expression(6)
 				}
 
 			case 2:
 				localctx = NewNumeric_expressionContext(p, _parentctx, _parentState)
 				p.PushNewRecursionContext(localctx, _startState, FluxRULE_numeric_expression)
-				p.SetState(547)
+				p.SetState(529)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 4)) {
 					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 4)", ""))
 					goto errorExit
 				}
 				{
-					p.SetState(548)
+					p.SetState(530)
 					p.Op_level2()
 				}
 				{
-					p.SetState(549)
+					p.SetState(531)
 					p.numeric_expression(5)
 				}
 
@@ -6936,12 +6917,12 @@ func (p *Flux) numeric_expression(_p int) (localctx INumeric_expressionContext) 
 			}
 
 		}
-		p.SetState(555)
+		p.SetState(537)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
 		}
-		_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 58, p.GetParserRuleContext())
+		_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 56, p.GetParserRuleContext())
 		if p.HasError() {
 			goto errorExit
 		}
@@ -7138,16 +7119,16 @@ func (p *Flux) text_expression(_p int) (localctx IText_expressionContext) {
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(560)
+	p.SetState(542)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
-	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 59, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 57, p.GetParserRuleContext()) {
 	case 1:
 		{
-			p.SetState(557)
+			p.SetState(539)
 			p.Match(FluxTEXT)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -7157,13 +7138,13 @@ func (p *Flux) text_expression(_p int) (localctx IText_expressionContext) {
 
 	case 2:
 		{
-			p.SetState(558)
+			p.SetState(540)
 			p.Get_var()
 		}
 
 	case 3:
 		{
-			p.SetState(559)
+			p.SetState(541)
 			p.Function_call()
 		}
 
@@ -7171,12 +7152,12 @@ func (p *Flux) text_expression(_p int) (localctx IText_expressionContext) {
 		goto errorExit
 	}
 	p.GetParserRuleContext().SetStop(p.GetTokenStream().LT(-1))
-	p.SetState(567)
+	p.SetState(549)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
-	_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 60, p.GetParserRuleContext())
+	_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 58, p.GetParserRuleContext())
 	if p.HasError() {
 		goto errorExit
 	}
@@ -7188,14 +7169,14 @@ func (p *Flux) text_expression(_p int) (localctx IText_expressionContext) {
 			_prevctx = localctx
 			localctx = NewText_expressionContext(p, _parentctx, _parentState)
 			p.PushNewRecursionContext(localctx, _startState, FluxRULE_text_expression)
-			p.SetState(562)
+			p.SetState(544)
 
 			if !(p.Precpred(p.GetParserRuleContext(), 4)) {
 				p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 4)", ""))
 				goto errorExit
 			}
 			{
-				p.SetState(563)
+				p.SetState(545)
 				p.Match(FluxOP_PLUS)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -7203,17 +7184,17 @@ func (p *Flux) text_expression(_p int) (localctx IText_expressionContext) {
 				}
 			}
 			{
-				p.SetState(564)
+				p.SetState(546)
 				p.text_expression(5)
 			}
 
 		}
-		p.SetState(569)
+		p.SetState(551)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
 		}
-		_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 60, p.GetParserRuleContext())
+		_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 58, p.GetParserRuleContext())
 		if p.HasError() {
 			goto errorExit
 		}
@@ -7497,16 +7478,16 @@ func (p *Flux) logical_expression(_p int) (localctx ILogical_expressionContext) 
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(584)
+	p.SetState(566)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
-	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 61, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 59, p.GetParserRuleContext()) {
 	case 1:
 		{
-			p.SetState(571)
+			p.SetState(553)
 			p.Match(FluxL_PAREN)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -7514,11 +7495,11 @@ func (p *Flux) logical_expression(_p int) (localctx ILogical_expressionContext) 
 			}
 		}
 		{
-			p.SetState(572)
+			p.SetState(554)
 			p.logical_expression(0)
 		}
 		{
-			p.SetState(573)
+			p.SetState(555)
 			p.Match(FluxR_PAREN)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -7528,21 +7509,21 @@ func (p *Flux) logical_expression(_p int) (localctx ILogical_expressionContext) 
 
 	case 2:
 		{
-			p.SetState(575)
+			p.SetState(557)
 			p.numeric_expression(0)
 		}
 		{
-			p.SetState(576)
+			p.SetState(558)
 			p.Op_level4()
 		}
 		{
-			p.SetState(577)
+			p.SetState(559)
 			p.numeric_expression(0)
 		}
 
 	case 3:
 		{
-			p.SetState(579)
+			p.SetState(561)
 			p.Match(FluxOP_NOT)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -7550,13 +7531,13 @@ func (p *Flux) logical_expression(_p int) (localctx ILogical_expressionContext) 
 			}
 		}
 		{
-			p.SetState(580)
+			p.SetState(562)
 			p.logical_expression(4)
 		}
 
 	case 4:
 		{
-			p.SetState(581)
+			p.SetState(563)
 			p.Match(FluxBOOLEAN)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -7566,13 +7547,13 @@ func (p *Flux) logical_expression(_p int) (localctx ILogical_expressionContext) 
 
 	case 5:
 		{
-			p.SetState(582)
+			p.SetState(564)
 			p.Get_var()
 		}
 
 	case 6:
 		{
-			p.SetState(583)
+			p.SetState(565)
 			p.Function_call()
 		}
 
@@ -7580,12 +7561,12 @@ func (p *Flux) logical_expression(_p int) (localctx ILogical_expressionContext) 
 		goto errorExit
 	}
 	p.GetParserRuleContext().SetStop(p.GetTokenStream().LT(-1))
-	p.SetState(596)
+	p.SetState(578)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
-	_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 63, p.GetParserRuleContext())
+	_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 61, p.GetParserRuleContext())
 	if p.HasError() {
 		goto errorExit
 	}
@@ -7595,46 +7576,46 @@ func (p *Flux) logical_expression(_p int) (localctx ILogical_expressionContext) 
 				p.TriggerExitRuleEvent()
 			}
 			_prevctx = localctx
-			p.SetState(594)
+			p.SetState(576)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
 			}
 
-			switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 62, p.GetParserRuleContext()) {
+			switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 60, p.GetParserRuleContext()) {
 			case 1:
 				localctx = NewLogical_expressionContext(p, _parentctx, _parentState)
 				p.PushNewRecursionContext(localctx, _startState, FluxRULE_logical_expression)
-				p.SetState(586)
+				p.SetState(568)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 6)) {
 					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 6)", ""))
 					goto errorExit
 				}
 				{
-					p.SetState(587)
+					p.SetState(569)
 					p.Op_level3()
 				}
 				{
-					p.SetState(588)
+					p.SetState(570)
 					p.logical_expression(7)
 				}
 
 			case 2:
 				localctx = NewLogical_expressionContext(p, _parentctx, _parentState)
 				p.PushNewRecursionContext(localctx, _startState, FluxRULE_logical_expression)
-				p.SetState(590)
+				p.SetState(572)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 5)) {
 					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 5)", ""))
 					goto errorExit
 				}
 				{
-					p.SetState(591)
+					p.SetState(573)
 					p.Op_level4()
 				}
 				{
-					p.SetState(592)
+					p.SetState(574)
 					p.logical_expression(6)
 				}
 
@@ -7643,12 +7624,12 @@ func (p *Flux) logical_expression(_p int) (localctx ILogical_expressionContext) 
 			}
 
 		}
-		p.SetState(598)
+		p.SetState(580)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
 		}
-		_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 63, p.GetParserRuleContext())
+		_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 61, p.GetParserRuleContext())
 		if p.HasError() {
 			goto errorExit
 		}
@@ -7784,17 +7765,17 @@ func (s *Get_varContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 func (p *Flux) Get_var() (localctx IGet_varContext) {
 	localctx = NewGet_varContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, FluxRULE_get_var)
-	p.SetState(602)
+	p.SetState(584)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
-	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 64, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 62, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(599)
+			p.SetState(581)
 			p.Match(FluxVAR_IDENTIFIER)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -7805,14 +7786,14 @@ func (p *Flux) Get_var() (localctx IGet_varContext) {
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(600)
+			p.SetState(582)
 			p.Get_array_element()
 		}
 
 	case 3:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(601)
+			p.SetState(583)
 			p.Get_child()
 		}
 
@@ -7979,38 +7960,38 @@ func (s *Math_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interfac
 func (p *Flux) Math_expression() (localctx IMath_expressionContext) {
 	localctx = NewMath_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, FluxRULE_math_expression)
-	p.SetState(608)
+	p.SetState(590)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
-	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 65, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 63, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(604)
+			p.SetState(586)
 			p.Get_var()
 		}
 
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(605)
+			p.SetState(587)
 			p.numeric_expression(0)
 		}
 
 	case 3:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(606)
+			p.SetState(588)
 			p.logical_expression(0)
 		}
 
 	case 4:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(607)
+			p.SetState(589)
 			p.text_expression(0)
 		}
 
@@ -8143,7 +8124,7 @@ func (p *Flux) Get_array_element() (localctx IGet_array_elementContext) {
 	p.EnterRule(localctx, 62, FluxRULE_get_array_element)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(610)
+		p.SetState(592)
 		p.Match(FluxVAR_IDENTIFIER)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -8151,7 +8132,7 @@ func (p *Flux) Get_array_element() (localctx IGet_array_elementContext) {
 		}
 	}
 	{
-		p.SetState(611)
+		p.SetState(593)
 		p.Match(FluxL_SQUARE)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -8159,11 +8140,11 @@ func (p *Flux) Get_array_element() (localctx IGet_array_elementContext) {
 		}
 	}
 	{
-		p.SetState(612)
+		p.SetState(594)
 		p.numeric_expression(0)
 	}
 	{
-		p.SetState(613)
+		p.SetState(595)
 		p.Match(FluxR_SQUARE)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -8311,17 +8292,17 @@ func (s *Get_childContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 func (p *Flux) Get_child() (localctx IGet_childContext) {
 	localctx = NewGet_childContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, FluxRULE_get_child)
-	p.SetState(630)
+	p.SetState(612)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
-	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 66, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 64, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(615)
+			p.SetState(597)
 			p.Match(FluxVAR_IDENTIFIER)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -8329,7 +8310,7 @@ func (p *Flux) Get_child() (localctx IGet_childContext) {
 			}
 		}
 		{
-			p.SetState(616)
+			p.SetState(598)
 			p.Match(FluxDOT)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -8337,7 +8318,7 @@ func (p *Flux) Get_child() (localctx IGet_childContext) {
 			}
 		}
 		{
-			p.SetState(617)
+			p.SetState(599)
 			p.Match(FluxVAR_IDENTIFIER)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -8348,7 +8329,7 @@ func (p *Flux) Get_child() (localctx IGet_childContext) {
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(618)
+			p.SetState(600)
 			p.Match(FluxVAR_IDENTIFIER)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -8356,7 +8337,7 @@ func (p *Flux) Get_child() (localctx IGet_childContext) {
 			}
 		}
 		{
-			p.SetState(619)
+			p.SetState(601)
 			p.Match(FluxDOT)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -8364,14 +8345,14 @@ func (p *Flux) Get_child() (localctx IGet_childContext) {
 			}
 		}
 		{
-			p.SetState(620)
+			p.SetState(602)
 			p.Get_array_element()
 		}
 
 	case 3:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(621)
+			p.SetState(603)
 			p.Match(FluxVAR_IDENTIFIER)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -8379,7 +8360,7 @@ func (p *Flux) Get_child() (localctx IGet_childContext) {
 			}
 		}
 		{
-			p.SetState(622)
+			p.SetState(604)
 			p.Match(FluxDOT)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -8387,18 +8368,18 @@ func (p *Flux) Get_child() (localctx IGet_childContext) {
 			}
 		}
 		{
-			p.SetState(623)
+			p.SetState(605)
 			p.Get_child()
 		}
 
 	case 4:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(624)
+			p.SetState(606)
 			p.Get_array_element()
 		}
 		{
-			p.SetState(625)
+			p.SetState(607)
 			p.Match(FluxDOT)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -8406,21 +8387,21 @@ func (p *Flux) Get_child() (localctx IGet_childContext) {
 			}
 		}
 		{
-			p.SetState(626)
+			p.SetState(608)
 			p.Get_child()
 		}
 
 	case 5:
 		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(628)
+			p.SetState(610)
 			p.Get_array_element()
 		}
 
 	case 6:
 		p.EnterOuterAlt(localctx, 6)
 		{
-			p.SetState(629)
+			p.SetState(611)
 			p.Match(FluxVAR_IDENTIFIER)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -8557,17 +8538,17 @@ func (p *Flux) Function_call() (localctx IFunction_callContext) {
 	p.EnterRule(localctx, 66, FluxRULE_function_call)
 	var _la int
 
-	p.SetState(639)
+	p.SetState(621)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
-	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 68, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 66, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(632)
+			p.SetState(614)
 			p.Match(FluxVAR_IDENTIFIER)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -8575,14 +8556,14 @@ func (p *Flux) Function_call() (localctx IFunction_callContext) {
 			}
 		}
 		{
-			p.SetState(633)
+			p.SetState(615)
 			p.Match(FluxL_PAREN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
-		p.SetState(635)
+		p.SetState(617)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -8591,13 +8572,13 @@ func (p *Flux) Function_call() (localctx IFunction_callContext) {
 
 		if _la == FluxVAR_IDENTIFIER {
 			{
-				p.SetState(634)
+				p.SetState(616)
 				p.Args()
 			}
 
 		}
 		{
-			p.SetState(637)
+			p.SetState(619)
 			p.Match(FluxR_PAREN)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -8608,7 +8589,7 @@ func (p *Flux) Function_call() (localctx IFunction_callContext) {
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(638)
+			p.SetState(620)
 			p.Args()
 		}
 
@@ -8820,15 +8801,115 @@ func (p *Flux) Args() (localctx IArgsContext) {
 	p.EnterRule(localctx, 68, FluxRULE_args)
 	var _la int
 
-	p.SetState(672)
+	p.SetState(654)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
-	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 73, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 71, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
+		{
+			p.SetState(623)
+			p.Match(FluxVAR_IDENTIFIER)
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+		{
+			p.SetState(624)
+			p.Match(FluxL_PAREN)
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+		{
+			p.SetState(625)
+			p.Get_var()
+		}
+		{
+			p.SetState(626)
+			p.Match(FluxR_PAREN)
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+
+	case 2:
+		p.EnterOuterAlt(localctx, 2)
+		{
+			p.SetState(628)
+			p.Match(FluxVAR_IDENTIFIER)
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+		{
+			p.SetState(629)
+			p.Match(FluxL_PAREN)
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+		p.SetState(638)
+		p.GetErrorHandler().Sync(p)
+		if p.HasError() {
+			goto errorExit
+		}
+		_la = p.GetTokenStream().LA(1)
+
+		if _la == FluxVAR_IDENTIFIER {
+			{
+				p.SetState(630)
+				p.Get_var()
+			}
+			p.SetState(635)
+			p.GetErrorHandler().Sync(p)
+			if p.HasError() {
+				goto errorExit
+			}
+			_la = p.GetTokenStream().LA(1)
+
+			for _la == FluxCOMMA {
+				{
+					p.SetState(631)
+					p.Match(FluxCOMMA)
+					if p.HasError() {
+						// Recognition error - abort rule
+						goto errorExit
+					}
+				}
+				{
+					p.SetState(632)
+					p.Get_var()
+				}
+
+				p.SetState(637)
+				p.GetErrorHandler().Sync(p)
+				if p.HasError() {
+					goto errorExit
+				}
+				_la = p.GetTokenStream().LA(1)
+			}
+
+		}
+		{
+			p.SetState(640)
+			p.Match(FluxR_PAREN)
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+
+	case 3:
+		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(641)
 			p.Match(FluxVAR_IDENTIFIER)
@@ -8845,107 +8926,7 @@ func (p *Flux) Args() (localctx IArgsContext) {
 				goto errorExit
 			}
 		}
-		{
-			p.SetState(643)
-			p.Get_var()
-		}
-		{
-			p.SetState(644)
-			p.Match(FluxR_PAREN)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-
-	case 2:
-		p.EnterOuterAlt(localctx, 2)
-		{
-			p.SetState(646)
-			p.Match(FluxVAR_IDENTIFIER)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-		{
-			p.SetState(647)
-			p.Match(FluxL_PAREN)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-		p.SetState(656)
-		p.GetErrorHandler().Sync(p)
-		if p.HasError() {
-			goto errorExit
-		}
-		_la = p.GetTokenStream().LA(1)
-
-		if _la == FluxVAR_IDENTIFIER {
-			{
-				p.SetState(648)
-				p.Get_var()
-			}
-			p.SetState(653)
-			p.GetErrorHandler().Sync(p)
-			if p.HasError() {
-				goto errorExit
-			}
-			_la = p.GetTokenStream().LA(1)
-
-			for _la == FluxCOMMA {
-				{
-					p.SetState(649)
-					p.Match(FluxCOMMA)
-					if p.HasError() {
-						// Recognition error - abort rule
-						goto errorExit
-					}
-				}
-				{
-					p.SetState(650)
-					p.Get_var()
-				}
-
-				p.SetState(655)
-				p.GetErrorHandler().Sync(p)
-				if p.HasError() {
-					goto errorExit
-				}
-				_la = p.GetTokenStream().LA(1)
-			}
-
-		}
-		{
-			p.SetState(658)
-			p.Match(FluxR_PAREN)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-
-	case 3:
-		p.EnterOuterAlt(localctx, 3)
-		{
-			p.SetState(659)
-			p.Match(FluxVAR_IDENTIFIER)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-		{
-			p.SetState(660)
-			p.Match(FluxL_PAREN)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-		p.SetState(669)
+		p.SetState(651)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -8954,10 +8935,10 @@ func (p *Flux) Args() (localctx IArgsContext) {
 
 		if (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&158331286061098) != 0 {
 			{
-				p.SetState(661)
+				p.SetState(643)
 				p.Math_expression()
 			}
-			p.SetState(666)
+			p.SetState(648)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -8966,7 +8947,7 @@ func (p *Flux) Args() (localctx IArgsContext) {
 
 			for _la == FluxCOMMA {
 				{
-					p.SetState(662)
+					p.SetState(644)
 					p.Match(FluxCOMMA)
 					if p.HasError() {
 						// Recognition error - abort rule
@@ -8974,11 +8955,11 @@ func (p *Flux) Args() (localctx IArgsContext) {
 					}
 				}
 				{
-					p.SetState(663)
+					p.SetState(645)
 					p.Math_expression()
 				}
 
-				p.SetState(668)
+				p.SetState(650)
 				p.GetErrorHandler().Sync(p)
 				if p.HasError() {
 					goto errorExit
@@ -8988,7 +8969,7 @@ func (p *Flux) Args() (localctx IArgsContext) {
 
 		}
 		{
-			p.SetState(671)
+			p.SetState(653)
 			p.Match(FluxR_PAREN)
 			if p.HasError() {
 				// Recognition error - abort rule

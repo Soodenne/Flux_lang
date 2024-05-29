@@ -26,7 +26,11 @@ func (e ExecutionContext) Clone() *ExecutionContext {
 	return &ExecutionContext{
 		ctx:          e.ctx,
 		NumericValue: e.NumericValue,
+<<<<<<< HEAD
 		BoolValue:    e.BoolValue,
+=======
+		TextValue:    e.TextValue,
+>>>>>>> bd493bb5a93b94c38cd6604eba3c51bda7258dbe
 		VarTable:     e.VarTable,
 	}
 }
@@ -35,7 +39,11 @@ func NewExecutionContext(ctx context.Context, varTable *core.VarTable) *Executio
 	return &ExecutionContext{
 		ctx:          ctx,
 		NumericValue: 0,
+<<<<<<< HEAD
 		BoolValue:    false,
+=======
+		TextValue:    "",
+>>>>>>> bd493bb5a93b94c38cd6604eba3c51bda7258dbe
 		VarTable:     varTable,
 	}
 }

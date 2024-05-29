@@ -8,7 +8,6 @@ import (
 type MathExpression struct {
 	*codeobjects2.BaseStatement
 	NumericExpr *NumericExpression
-	TextExpr    *TextExpression
 	GetVar      *GetVar
 	LogicalExpr *LogicalExpression
 }
@@ -20,8 +19,6 @@ func (m MathExpression) Generate(ctx *codeobjects2.GenerateContext) string {
 	if m.GetVar != nil {
 		return m.GetVar.Generate(ctx)
 	}
-	if m.TextExpr != nil {
-		return m.TextExpr.Generate(ctx)
 
 	}
 	if m.LogicalExpr != nil {
@@ -43,10 +40,6 @@ func (m MathExpression) Execute(ctx *codeobjects2.ExecutionContext) *exception.B
 		return m.GetVar.Execute(ctx)
 	}
 
-	if m.TextExpr != nil {
-		return m.TextExpr.Execute(ctx)
-
-	}
 	return nil
 }
 func NewMathExpression(line int, startPos int, endPos int, numericExpr *NumericExpression, textExpr *TextExpression, logicExpr *LogicalExpression) *MathExpression {

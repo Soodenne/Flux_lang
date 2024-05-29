@@ -73,9 +73,11 @@ func TestVM_VarDeclaration(t *testing.T) {
 		myVM := vm.NewFluxVirtualMachine()
 		result := myVM.Execute(&shared.ExecutionParams{
 			SourceCode: `
-				text a {'hello'}
-				text b {'world'}
-				text c {'hello'+'world'}
+				text c {'hello'}
+				text d {'hello'+'hehe'+'world'}
+				text e {c+d}
+			
+				
 			`,
 		})
 		if len(result.ErrorCollector.GetErrors()) != 0 {
@@ -87,15 +89,17 @@ func TestVM_VarDeclaration(t *testing.T) {
 		if result.ElapsedTime > 1000 {
 			t.Errorf("Execution time too long: %v", result.ElapsedTime)
 		}
-		if a, err := myVM.GetVarTable().GetTextValue("a"); err != nil || a != "hello" {
-			t.Errorf("Expected hello, got %v", a)
+
+		if c, err := myVM.GetVarTable().GetTextValue("c"); err != nil || c != "hello" {
+			t.Errorf("Expected hello, got %v", c)
 		}
-		if b, err := myVM.GetVarTable().GetTextValue("b"); err != nil || b != "world" {
-			t.Errorf("Expected world, got %v", b)
+		if d, err := myVM.GetVarTable().GetTextValue("d"); err != nil || d != "helloworld" {
+			t.Errorf("Expected helloworld, got %v", d)
 		}
-		if c, err := myVM.GetVarTable().GetTextValue("c"); err != nil || c != "helloworld" {
-			t.Errorf("Expected helloworld, got %v", c)
+		if e, err := myVM.GetVarTable().GetTextValue("e"); err != nil || e != "hellohelloworld1" {
+			t.Errorf("Expected hellohelloworld, got %v", e)
 		}
+
 	})
 	t.Run("create a bool variable", func(t *testing.T) {
 		myVM := vm.NewFluxVirtualMachine()

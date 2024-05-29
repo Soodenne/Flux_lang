@@ -42,7 +42,6 @@ func (f FluxProgramParser) EnterOp_one_declaration(c *parsing.Op_one_declaration
 }
 
 func (f FluxProgramParser) EnterText_expression(c *parsing.Text_expressionContext) {
-	//TODO implement me
 
 	textExpr := &fluxExpr.TextExpression{
 		BaseStatement: &fluxCodeObjects.BaseStatement{
@@ -249,6 +248,7 @@ func (f *FluxProgramParser) EnterBoolean_var_declaration(c *parsing.Boolean_var_
 
 func (f FluxProgramParser) EnterSingle_var_declaration(c *parsing.Single_var_declarationContext) {
 	f.logger.Infof("Entering single var declaration")
+
 }
 
 func (f FluxProgramParser) EnterArray_var_declaration(c *parsing.Array_var_declarationContext) {
@@ -421,15 +421,27 @@ func (f FluxProgramParser) ExitString_var_declaration(c *parsing.String_var_decl
 	if f.stackStatements.Peek() != nil {
 		if _, ok := (*f.stackStatements.Peek()).(*declarations.VarDeclaration); ok != false {
 			textDecStmt := (*f.stackStatements.Pop()).(*declarations.VarDeclaration)
-			if c.TEXT() != nil {
+			if !f.resultStack.IsEmpty() {
+				// check if the top of the stack is a TextExpression
+				if textExpr, ok := (*f.resultStack.Peek()).(*fluxExpr.TextExpression); ok != false {
+					textDecStmt.ExprText = textExpr
+					f.resultStack.Pop()
+				}
+				//pop text expression
+				// check if the top of the stack is a TextExpression
+			} else if c.TEXT() != nil {
 				// trim ''
 				textDecStmt.RawValue = strings.Trim(c.TEXT().GetText(), "'")
 			} else {
 				textDecStmt.RawValue = ""
 			}
+
 			textDecStmt.EndPos = c.GetStop().GetStop()
 			textDecStmt.Name = c.Var_name().GetText()
 			textDecStmt.Type = common.FluxTypeString
+
+			// check if the bottom of the stack is a text expression
+
 			f.resultStack.Push(textDecStmt)
 		}
 	}
@@ -693,6 +705,12 @@ func (f FluxProgramParser) ExitGet_var(c *parsing.Get_varContext) {
 				mathExpr := (*f.stackStatements.Peek()).(*fluxExpr.MathExpression)
 				mathExpr.GetVar = getVar
 			}
+
+			if _, ok := (*f.stackStatements.Peek()).(*fluxExpr.TextExpression); ok != false {
+				textExpr := (*f.stackStatements.Peek()).(*fluxExpr.TextExpression)
+				textExpr.GetVar = getVar
+			}
+
 			// case 2: parent is a numeric expression
 			if _, ok := (*f.stackStatements.Peek()).(*fluxExpr.NumericExpression); ok != false {
 				numExpr := (*f.stackStatements.Peek()).(*fluxExpr.NumericExpression)
